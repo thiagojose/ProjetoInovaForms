@@ -1,0 +1,20 @@
+{{
+  "title": "{TITULOCICLO}",
+  "objective": "{OBJETIVOCICLO}",
+  "ownedByID": "{IDRESPONSAVEL}",
+  "folder": {{
+    "ID": {IDPASTA}
+  }},
+  "jiraComponentID": {IDCOMPONENTE},
+  "jiraReleaseID": {IDRELEASE},
+  "startDate": "{DATAINICIO}",
+  "endDate": "{DATAFIM}",
+  "tags": [
+    {{
+      "tag": {{
+        "name": "{TAGAUTOMACAO}",
+        "ID": {IDTAG}
+      }}
+    }}
+  ]
+}}
