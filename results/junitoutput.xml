@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Tests" tests="5" errors="0" failures="5" skipped="0" time="44.567">
+<testcase classname="Tests.suitesTeardown" name="Cenário 00: Raliza os imports" time="1.069">
+<failure message="FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Pichau\\Desktop\\ProjetoTemplate\\resources\\..\\results\\junitoutput.xml'" type="AssertionError"></failure>
+</testcase>
+<testcase classname="Tests.testSuiteAplicativoA.TestFuncionalidadeA" name="Cenário 01: O que será feito" time="10.694">
+<failure message="No keyword with name 'Dado' found." type="AssertionError"></failure>
+</testcase>
+<testcase classname="Tests.testSuiteAplicativoA.TestFuncionalidadeA" name="Cenário 02: O que será feito" time="10.535">
+<failure message="No keyword with name 'Dado' found." type="AssertionError"></failure>
+</testcase>
+<testcase classname="Tests.testSuiteAplicativoA.TestFuncionalidadeB" name="Cenário 01: O que será feito" time="10.530">
+<failure message="No keyword with name 'Dado' found." type="AssertionError"></failure>
+</testcase>
+<testcase classname="Tests.testSuiteAplicativoA.TestFuncionalidadeB" name="Cenário 02: O que será feito" time="11.306">
+<failure message="No keyword with name 'Dado' found." type="AssertionError"></failure>
+</testcase>
+</testsuite>

@@ -38,12 +38,11 @@ ARQUIVO_DIR = 'tests'
 
 # diretório para testes de um aplicativo/site específico, se não especificado,
 # o teste executará a partir do diretório anterior todos os testes
-APLICATIVO_DIR = '\\testAplicativoContasLocalnews'
+APLICATIVO_DIR = ''
 
 # nome do teste a ser executado, caso não seja especificado,
 # o teste executará do diretório anterior todos os testes
 NOME_TESTE = ''
-#'\\TestCadastroLocalnews.robot'
 
 
 def encapsulaComandos():
