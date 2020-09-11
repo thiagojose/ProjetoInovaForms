@@ -6,19 +6,19 @@ Resource    APIRequests.robot
 
 Abrir navegador
     Open Browser    ${URL}   ${BROWSER}
-	Maximize Browser Window
+#	Maximize Browser Window
 
 Fechar navegador
     Run Keyword If Test Failed    Screenshot Personalizada
     Close Browser
 
 Abrir navegador e logar
-    Open Browser    ${LOGINURL}    ${BROWSER}
+    Open Browser    ${URL}    ${BROWSER}
 	Então é efetuado o login
 
 Deslogar e fechar o navegador
     Então é encerrada a sessão
-	Close Browser
+#	Close Browser
 
 Envia os resultados para o Jira
     Conecta na API do AioTests

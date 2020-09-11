@@ -38,11 +38,11 @@ ARQUIVO_DIR = 'tests'
 
 # diretório para testes de um aplicativo/site específico, se não especificado,
 # o teste executará a partir do diretório anterior todos os testes
-APLICATIVO_DIR = ''
+APLICATIVO_DIR = '/testSuiteInovaForms'
 
 # nome do teste a ser executado, caso não seja especificado,
 # o teste executará do diretório anterior todos os testes
-NOME_TESTE = ''
+NOME_TESTE = '/TestCadastroUsuario.robot'
 
 
 def encapsulaComandos():

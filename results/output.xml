@@ -1,211 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200831 13:02:47.647" rpa="false">
-<suite id="s1" name="Tests" source="C:\Users\Pichau\Desktop\ProjetoTemplate\tests">
-<suite id="s1-s1" name="suitesTeardown" source="C:\Users\Pichau\Desktop\ProjetoTemplate\tests\suitesTeardown.robot">
-<test id="s1-s1-t1" name="Cenário 00: Raliza os imports">
-<kw name="Envia os resultados para o Jira" library="SetupsTeardowns">
-<kw name="Conecta na API do AioTests" library="APIRequests">
-<kw name="Create Session" library="RequestsLibrary">
-<doc>Create Session: create a HTTP session to a server</doc>
-<arguments>
-<arg>${APIALIAS}</arg>
-<arg>${APIURL}</arg>
-<arg>headers=${HEADERS}</arg>
-<arg>verify=True</arg>
-</arguments>
-<msg timestamp="20200831 13:02:47.812" level="INFO">Creating Session using : alias=EnvioXml, url=https://tcms.aioreports.com/aio-tcms, headers={'Authorization': 'AioAuth OWRkNGU3OTktODZmZC00Y2M4LTgzZDEtOTFkMmNjYjkwNjE4', 'accept': 'application/json;charset=utf-8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
-<status status="PASS" starttime="20200831 13:02:47.812" endtime="20200831 13:02:47.812"></status>
-</kw>
-<status status="PASS" starttime="20200831 13:02:47.811" endtime="20200831 13:02:47.812"></status>
-</kw>
-<kw name="Cria um novo ciclo e envia os cenários como casos de teste" library="APIRequests">
-<kw name="Get Current Date" library="DateTime">
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<arguments>
-<arg>result_format=%Y-%m-%d</arg>
-<arg>increment=1 day</arg>
-</arguments>
-<assign>
-<var>${hoje}</var>
-</assign>
-<msg timestamp="20200831 13:02:47.814" level="INFO">${hoje} = 2020-09-01</msg>
-<status status="PASS" starttime="20200831 13:02:47.813" endtime="20200831 13:02:47.814"></status>
-</kw>
-<kw name="Get Current Date" library="DateTime">
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<arguments>
-<arg>result_format=%d-%m-%Y às %H:%M</arg>
-</arguments>
-<assign>
-<var>${agora}</var>
-</assign>
-<msg timestamp="20200831 13:02:47.814" level="INFO">${agora} = 31-08-2020 às 13:02</msg>
-<status status="PASS" starttime="20200831 13:02:47.814" endtime="20200831 13:02:47.814"></status>
-</kw>
-<kw name="Replace String" library="String">
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<arguments>
-<arg>${LOG FILE}</arg>
-<arg>\\${APPPSTEARDOWNRESULTS}\\log.html</arg>
-<arg>${EMPTY}</arg>
-</arguments>
-<assign>
-<var>${resultadopastatestes}</var>
-</assign>
-<msg timestamp="20200831 13:02:47.814" level="INFO">${resultadopastatestes} = C:\Users\Pichau\Desktop\ProjetoTemplate\results\log.html</msg>
-<status status="PASS" starttime="20200831 13:02:47.814" endtime="20200831 13:02:47.814"></status>
-</kw>
-<kw name="Replace String" library="String">
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<arguments>
-<arg>${resultadopastatestes}</arg>
-<arg>\\</arg>
-<arg>\\\\</arg>
-</arguments>
-<assign>
-<var>${resultadopastatestes}</var>
-</assign>
-<msg timestamp="20200831 13:02:47.815" level="INFO">${resultadopastatestes} = C:\\Users\\Pichau\\Desktop\\ProjetoTemplate\\results\\log.html</msg>
-<status status="PASS" starttime="20200831 13:02:47.815" endtime="20200831 13:02:47.815"></status>
-</kw>
-<kw name="Format String" library="String">
-<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
-<arguments>
-<arg>${JSONCICLO}</arg>
-<arg>TITULOCICLO=Execução realizada em ${agora} para o projeto ${IDPROJETO}</arg>
-<arg>OBJETIVOCICLO=Verificação diária, resultados estão em: ${resultadopastatestes}</arg>
-<arg>DATAINICIO=${hoje}</arg>
-<arg>DATAFIM=${hoje}</arg>
-</arguments>
-<assign>
-<var>${ciclobody}</var>
-</assign>
-<msg timestamp="20200831 13:02:47.816" level="INFO" html="yes">Reading template from file &lt;a href="C:\Users\Pichau\Desktop\ProjetoTemplate\resources\variables\newcyclesimp.json"&gt;C:\Users\Pichau\Desktop\ProjetoTemplate\resources\variables\newcyclesimp.json&lt;/a&gt;.</msg>
-<msg timestamp="20200831 13:02:47.816" level="INFO">${ciclobody} = {
-  "title": "Execução realizada em 31-08-2020 às 13:02 para o projeto LN",
-  "objective": "Verificação diária, resultados estão em: C:\\Users\\Pichau\\Desktop\\ProjetoTemplate\\results\\log.html",
-  ...</msg>
-<status status="PASS" starttime="20200831 13:02:47.815" endtime="20200831 13:02:47.817"></status>
-</kw>
-<kw name="To Json" library="RequestsLibrary">
-<doc>Convert a string to a JSON object</doc>
-<arguments>
-<arg>${ciclobody}</arg>
-</arguments>
-<assign>
-<var>${ciclobody}</var>
-</assign>
-<msg timestamp="20200831 13:02:47.817" level="INFO">To JSON using : content={
-  "title": "Execução realizada em 31-08-2020 às 13:02 para o projeto LN",
-  "objective": "Verificação diária, resultados estão em: C:\\Users\\Pichau\\Desktop\\ProjetoTemplate\\results\\log.html",
-  "startDate": "2020-09-01",
-  "endDate": "2020-09-01"
-}
- </msg>
-<msg timestamp="20200831 13:02:47.817" level="INFO">To JSON using : pretty_print=False </msg>
-<msg timestamp="20200831 13:02:47.817" level="INFO">${ciclobody} = {'title': 'Execução realizada em 31-08-2020 às 13:02 para o projeto LN', 'objective': 'Verificação diária, resultados estão em: C:\\Users\\Pichau\\Desktop\\ProjetoTemplate\\results\\log.html', 'startD...</msg>
-<status status="PASS" starttime="20200831 13:02:47.817" endtime="20200831 13:02:47.817"></status>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<arguments>
-<arg>jiraProjectId=${IDPROJETO}</arg>
-</arguments>
-<assign>
-<var>${projectiddict}</var>
-</assign>
-<msg timestamp="20200831 13:02:47.818" level="INFO">${projectiddict} = {'jiraProjectId': 'LN'}</msg>
-<status status="PASS" starttime="20200831 13:02:47.817" endtime="20200831 13:02:47.818"></status>
-</kw>
-<kw name="Post Request" library="RequestsLibrary">
-<doc>Send a POST request on the session object found using the
-given `alias`</doc>
-<arguments>
-<arg>alias=${APIALIAS}</arg>
-<arg>uri=${CYCLEURI}</arg>
-<arg>headers=${HEADERS}</arg>
-<arg>params=${projectiddict}</arg>
-<arg>json=${ciclobody}</arg>
-</arguments>
-<assign>
-<var>${postciclo}</var>
-</assign>
-<msg timestamp="20200831 13:02:48.873" level="INFO">POST Request : url=https://tcms.aioreports.com/aio-tcms/api/v1/project/LN/testcycle/detail?jiraProjectId=LN 
- path_url=/aio-tcms/api/v1/project/LN/testcycle/detail?jiraProjectId=LN 
- headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json;charset=utf-8', 'Connection': 'keep-alive', 'Authorization': 'AioAuth OWRkNGU3OTktODZmZC00Y2M4LTgzZDEtOTFkMmNjYjkwNjE4', 'Content-Length': '279', 'Content-Type': 'application/json'} 
- body=b'{"title": "Execu\\u00e7\\u00e3o realizada em 31-08-2020 \\u00e0s 13:02 para o projeto LN", "objective": "Verifica\\u00e7\\u00e3o di\\u00e1ria, resultados est\\u00e3o em: C:\\\\Users\\\\Pichau\\\\Desktop\\\\ProjetoTemplate\\\\results\\\\log.html", "startDate": "2020-09-01", "endDate": "2020-09-01"}' 
- </msg>
-<msg timestamp="20200831 13:02:48.873" level="INFO">POST Response : url=https://tcms.aioreports.com/aio-tcms/api/v1/project/LN/testcycle/detail?jiraProjectId=LN 
- status=200, reason= 
- body={"ID":363,"key":"LN-CY-75","title":"Execução realizada em 31-08-2020 às 13:02 para o projeto LN","objective":"Verificação diária, resultados estão em: C:\\Users\\Pichau\\Desktop\\ProjetoTemplate\\results\\log.html","ownedByID":"5f3d363a42959b00398b53d3","folder":null,"jiraComponentID":null,"jiraReleaseID":null,"startDate":1598918400000,"endDate":1598918400000,"isSystemDefined":false,"tags":null} 
- </msg>
-<msg timestamp="20200831 13:02:48.873" level="INFO">${postciclo} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20200831 13:02:47.818" endtime="20200831 13:02:48.874"></status>
-</kw>
-<kw name="To Json" library="RequestsLibrary">
-<doc>Convert a string to a JSON object</doc>
-<arguments>
-<arg>${postciclo.text}</arg>
-</arguments>
-<assign>
-<var>${ciclocriado}</var>
-</assign>
-<msg timestamp="20200831 13:02:48.874" level="INFO">To JSON using : content={"ID":363,"key":"LN-CY-75","title":"Execução realizada em 31-08-2020 às 13:02 para o projeto LN","objective":"Verificação diária, resultados estão em: C:\\Users\\Pichau\\Desktop\\ProjetoTemplate\\results\\log.html","ownedByID":"5f3d363a42959b00398b53d3","folder":null,"jiraComponentID":null,"jiraReleaseID":null,"startDate":1598918400000,"endDate":1598918400000,"isSystemDefined":false,"tags":null} </msg>
-<msg timestamp="20200831 13:02:48.874" level="INFO">To JSON using : pretty_print=False </msg>
-<msg timestamp="20200831 13:02:48.874" level="INFO">${ciclocriado} = {'ID': 363, 'key': 'LN-CY-75', 'title': 'Execução realizada em 31-08-2020 às 13:02 para o projeto LN', 'objective': 'Verificação diária, resultados estão em: C:\\Users\\Pichau\\Desktop\\ProjetoTemplat...</msg>
-<status status="PASS" starttime="20200831 13:02:48.874" endtime="20200831 13:02:48.874"></status>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<arguments>
-<arg>${IDCICLO}</arg>
-<arg>${ciclocriado}[key]</arg>
-</arguments>
-<msg timestamp="20200831 13:02:48.875" level="INFO">${IDCICLO} = LN-CY-75</msg>
-<status status="PASS" starttime="20200831 13:02:48.874" endtime="20200831 13:02:48.875"></status>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<arguments>
-<arg>${CASEURI}</arg>
-<arg>/api/v1/project/${IDPROJETO}/testcycle/${IDCICLO}/import/results</arg>
-</arguments>
-<msg timestamp="20200831 13:02:48.875" level="INFO">${CASEURI} = /api/v1/project/LN/testcycle/LN-CY-75/import/results</msg>
-<status status="PASS" starttime="20200831 13:02:48.875" endtime="20200831 13:02:48.875"></status>
-</kw>
-<kw name="Set To Dictionary" library="Collections">
-<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
-<arguments>
-<arg>${CASOBODY}</arg>
-<arg>testCycleId</arg>
-<arg>${IDCICLO}</arg>
-</arguments>
-<status status="PASS" starttime="20200831 13:02:48.875" endtime="20200831 13:02:48.875"></status>
-</kw>
-<kw name="Get File For Streaming Upload" library="RequestsLibrary">
-<doc>Opens and returns a file descriptor of a specified file to be passed as ``data`` parameter
-to other requests keywords.</doc>
-<arguments>
-<arg>${LOCALRESULTADO}</arg>
-</arguments>
-<assign>
-<var>${xmlfile}</var>
-</assign>
-<msg timestamp="20200831 13:02:48.878" level="FAIL">FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Pichau\\Desktop\\ProjetoTemplate\\resources\\..\\results\\junitoutput.xml'</msg>
-<status status="FAIL" starttime="20200831 13:02:48.876" endtime="20200831 13:02:48.878"></status>
-</kw>
-<status status="FAIL" starttime="20200831 13:02:47.813" endtime="20200831 13:02:48.878"></status>
-</kw>
-<status status="FAIL" starttime="20200831 13:02:47.811" endtime="20200831 13:02:48.878"></status>
-</kw>
-<status status="FAIL" starttime="20200831 13:02:47.810" endtime="20200831 13:02:48.879" critical="yes">FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Pichau\\Desktop\\ProjetoTemplate\\resources\\..\\results\\junitoutput.xml'</status>
-</test>
-<doc>Testar a funcionalidade de cadastro do site Localnews</doc>
-<status status="FAIL" starttime="20200831 13:02:47.675" endtime="20200831 13:02:48.881"></status>
-</suite>
-<suite id="s1-s2" name="testSuiteAplicativoA" source="C:\Users\Pichau\Desktop\ProjetoTemplate\tests\testSuiteAplicativoA">
-<suite id="s1-s2-s1" name="TestFuncionalidadeA" source="C:\Users\Pichau\Desktop\ProjetoTemplate\tests\testSuiteAplicativoA\TestFuncionalidadeA.robot">
-<test id="s1-s2-s1-t1" name="Cenário 01: O que será feito">
+<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200910 22:43:46.672" rpa="false">
+<suite id="s1" name="TestCadastroUsuario" source="C:\Users\Pichau\Desktop\ProjetoInovaForms\tests\testSuiteInovaForms\TestCadastroUsuario.robot">
+<test id="s1-t1" name="Cenário 01 Cadastro: Cadastrar um novo usuário com sucesso">
 <kw name="Abrir navegador" library="SetupsTeardowns" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
@@ -213,18 +9,179 @@ to other requests keywords.</doc>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200831 13:02:49.115" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/'.</msg>
-<status status="PASS" starttime="20200831 13:02:49.115" endtime="20200831 13:02:55.182"></status>
+<msg timestamp="20200910 22:43:47.052" level="INFO">Opening browser 'chrome' to base url 'https://inovaforms.digitais.sistemaindustria.com.br/'.</msg>
+<status status="PASS" starttime="20200910 22:43:47.052" endtime="20200910 22:43:52.245"></status>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200831 13:02:55.182" endtime="20200831 13:02:57.304"></status>
+<status status="PASS" starttime="20200910 22:43:47.052" endtime="20200910 22:43:52.246"></status>
 </kw>
-<status status="PASS" starttime="20200831 13:02:49.115" endtime="20200831 13:02:57.304"></status>
+<kw name="Dado que esteja na tela inicial do site InovaForms" library="Resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>tag=title</arg>
+</arguments>
+<status status="PASS" starttime="20200910 22:43:52.247" endtime="20200910 22:43:52.263"></status>
 </kw>
-<kw name="Dado">
-<msg timestamp="20200831 13:02:57.309" level="FAIL">No keyword with name 'Dado' found.</msg>
-<status status="FAIL" starttime="20200831 13:02:57.308" endtime="20200831 13:02:57.309"></status>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20200910 22:43:52.264" level="INFO">Opening url 'https://inovaforms.digitais.sistemaindustria.com.br/'</msg>
+<status status="PASS" starttime="20200910 22:43:52.263" endtime="20200910 22:43:52.592"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:43:52.246" endtime="20200910 22:43:52.592"></status>
+</kw>
+<kw name="Quando clicar em &quot;Criar um novo Usuário&quot;" library="Resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=${XPATHNOVOUSUARIO}</arg>
+</arguments>
+<msg timestamp="20200910 22:43:52.593" level="INFO">Clicking element 'xpath=//form/div/div/div[3]/a'.</msg>
+<status status="PASS" starttime="20200910 22:43:52.593" endtime="20200910 22:43:53.075"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:43:52.592" endtime="20200910 22:43:53.076"></status>
+</kw>
+<kw name="Então será redirecionado para a página de cadastro &quot;Novo usuário&quot;" library="Resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>tag=title</arg>
+</arguments>
+<status status="PASS" starttime="20200910 22:43:53.077" endtime="20200910 22:43:53.085"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${novo_usuario}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 22:43:53.085" endtime="20200910 22:43:53.100"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:43:53.077" endtime="20200910 22:43:53.100"></status>
+</kw>
+<kw name="E ao preencher os campos corretamente e clicar em enviar" library="Resources">
+<kw name="Preencher campos de texto" library="CommonForms">
+<arguments>
+<arg>campos=${DADOSCADASTRO}</arg>
+</arguments>
+<kw name="${id} | ${campo} IN [ &amp;{campos} ]" type="for">
+<kw name="${id} = nomeCoordenador, ${campo} = Fulano" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200910 22:43:53.103" level="INFO">Typing text 'Fulano' into text field 'nomeCoordenador'.</msg>
+<status status="PASS" starttime="20200910 22:43:53.102" endtime="20200910 22:43:53.216"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:43:53.102" endtime="20200910 22:43:53.216"></status>
+</kw>
+<kw name="${id} = telefone, ${campo} = 3112344321" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200910 22:43:53.216" level="INFO">Typing text '3112344321' into text field 'telefone'.</msg>
+<status status="PASS" starttime="20200910 22:43:53.216" endtime="20200910 22:43:53.334"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:43:53.216" endtime="20200910 22:43:53.334"></status>
+</kw>
+<kw name="${id} = cpf, ${campo} = 11111111111" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200910 22:43:53.335" level="INFO">Typing text '11111111111' into text field 'cpf'.</msg>
+<status status="PASS" starttime="20200910 22:43:53.335" endtime="20200910 22:43:53.453"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:43:53.335" endtime="20200910 22:43:53.453"></status>
+</kw>
+<kw name="${id} = email, ${campo} = estatico@gmail.com" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200910 22:43:53.454" level="INFO">Typing text 'estatico@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20200910 22:43:53.454" endtime="20200910 22:43:53.573"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:43:53.454" endtime="20200910 22:43:53.573"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:43:53.102" endtime="20200910 22:43:53.573"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:43:53.101" endtime="20200910 22:43:53.573"></status>
+</kw>
+<kw name="Preencher senha" library="CommonForms">
+<arguments>
+<arg>campos=${DADOSSENHA1}</arg>
+</arguments>
+<kw name="${id} | ${senha} IN [ &amp;{campos} ]" type="for">
+<kw name="${id} = password1, ${senha} = s3nh41@2" type="foritem">
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${senha}</arg>
+</arguments>
+<msg timestamp="20200910 22:43:53.574" level="INFO">Typing password into text field 'password1'.</msg>
+<msg timestamp="20200910 22:43:53.625" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20200910 22:43:53.679" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20200910 22:43:53.574" endtime="20200910 22:43:53.679"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:43:53.574" endtime="20200910 22:43:53.679"></status>
+</kw>
+<kw name="${id} = password2, ${senha} = s3nh41@2" type="foritem">
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${senha}</arg>
+</arguments>
+<msg timestamp="20200910 22:43:53.680" level="INFO">Typing password into text field 'password2'.</msg>
+<msg timestamp="20200910 22:43:53.726" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20200910 22:43:53.781" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20200910 22:43:53.679" endtime="20200910 22:43:53.781"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:43:53.679" endtime="20200910 22:43:53.781"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:43:53.574" endtime="20200910 22:43:53.781"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:43:53.573" endtime="20200910 22:43:53.782"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>name=${NAMESUBMITCADASTRO}</arg>
+</arguments>
+<msg timestamp="20200910 22:43:53.782" level="INFO">Clicking element 'name=button'.</msg>
+<status status="PASS" starttime="20200910 22:43:53.782" endtime="20200910 22:43:54.253"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:43:53.101" endtime="20200910 22:43:54.253"></status>
+</kw>
+<kw name="Então será redirecionado para a página de login novamente" library="Resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>tag=title</arg>
+</arguments>
+<status status="PASS" starttime="20200910 22:43:54.255" endtime="20200910 22:43:54.262"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>xpath=${XPATHLOGIN}</arg>
+</arguments>
+<msg timestamp="20200910 22:43:54.288" level="FAIL">Page should have contained element 'xpath=//form/div/div/div[3]/button' but did not.</msg>
+<status status="FAIL" starttime="20200910 22:43:54.262" endtime="20200910 22:43:54.288"></status>
+</kw>
+<status status="FAIL" starttime="20200910 22:43:54.254" endtime="20200910 22:43:54.288"></status>
 </kw>
 <kw name="Fechar navegador" library="SetupsTeardowns" type="teardown">
 <kw name="Run Keyword If Test Failed" library="BuiltIn">
@@ -241,8 +198,8 @@ to other requests keywords.</doc>
 <assign>
 <var>${agora}</var>
 </assign>
-<msg timestamp="20200831 13:02:57.311" level="INFO">${agora} = 31-08-2020-13.02.57.310958</msg>
-<status status="PASS" starttime="20200831 13:02:57.310" endtime="20200831 13:02:57.311"></status>
+<msg timestamp="20200910 22:43:54.291" level="INFO">${agora} = 10-09-2020-22.43.54.290409</msg>
+<status status="PASS" starttime="20200910 22:43:54.290" endtime="20200910 22:43:54.291"></status>
 </kw>
 <kw name="Split String" library="String">
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
@@ -253,35 +210,35 @@ to other requests keywords.</doc>
 <assign>
 <var>${nome teste}</var>
 </assign>
-<msg timestamp="20200831 13:02:57.311" level="INFO">${nome teste} = ['Cenário 01', ' O que será feito']</msg>
-<status status="PASS" starttime="20200831 13:02:57.311" endtime="20200831 13:02:57.311"></status>
+<msg timestamp="20200910 22:43:54.291" level="INFO">${nome teste} = ['Cenário 01 Cadastro', ' Cadastrar um novo usuário com sucesso']</msg>
+<status status="PASS" starttime="20200910 22:43:54.291" endtime="20200910 22:43:54.291"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
 <arguments>
 <arg>screenshot-${nome teste}[0]-${agora}.png</arg>
 </arguments>
-<msg timestamp="20200831 13:02:57.632" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshot-Cen%C3%A1rio%2001-31-08-2020-13.02.57.310958.png"&gt;&lt;img src="screenshot-Cen%C3%A1rio%2001-31-08-2020-13.02.57.310958.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200831 13:02:57.311" endtime="20200831 13:02:57.632"></status>
+<msg timestamp="20200910 22:43:54.542" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshot-Cen%C3%A1rio%2001%20Cadastro-10-09-2020-22.43.54.290409.png"&gt;&lt;img src="screenshot-Cen%C3%A1rio%2001%20Cadastro-10-09-2020-22.43.54.290409.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200910 22:43:54.291" endtime="20200910 22:43:54.542"></status>
 </kw>
-<status status="PASS" starttime="20200831 13:02:57.310" endtime="20200831 13:02:57.632"></status>
+<status status="PASS" starttime="20200910 22:43:54.290" endtime="20200910 22:43:54.542"></status>
 </kw>
-<status status="PASS" starttime="20200831 13:02:57.310" endtime="20200831 13:02:57.632"></status>
+<status status="PASS" starttime="20200910 22:43:54.289" endtime="20200910 22:43:54.542"></status>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200831 13:02:57.632" endtime="20200831 13:02:59.806"></status>
+<status status="PASS" starttime="20200910 22:43:54.542" endtime="20200910 22:43:56.767"></status>
 </kw>
-<status status="PASS" starttime="20200831 13:02:57.310" endtime="20200831 13:02:59.806"></status>
+<status status="PASS" starttime="20200910 22:43:54.289" endtime="20200910 22:43:56.767"></status>
 </kw>
-<doc>O que será feito de forma mais descritiva
-se julgar necessário</doc>
+<doc>Será feito o cadastro do usuário
+utilizando informações corretas ao sistema</doc>
 <tags>
-<tag>Resumo do teste</tag>
+<tag>Cadastro</tag>
 </tags>
-<status status="FAIL" starttime="20200831 13:02:49.113" endtime="20200831 13:02:59.807" critical="yes">No keyword with name 'Dado' found.</status>
+<status status="FAIL" starttime="20200910 22:43:47.051" endtime="20200910 22:43:56.768" critical="yes">Page should have contained element 'xpath=//form/div/div/div[3]/button' but did not.</status>
 </test>
-<test id="s1-s2-s1-t2" name="Cenário 02: O que será feito">
+<test id="s1-t2" name="Cenário 02 Cadastro: Falhar cadastro de um novo usuário com sucesso">
 <kw name="Abrir navegador" library="SetupsTeardowns" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
@@ -289,98 +246,186 @@ se julgar necessário</doc>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200831 13:02:59.811" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/'.</msg>
-<status status="PASS" starttime="20200831 13:02:59.810" endtime="20200831 13:03:05.816"></status>
+<msg timestamp="20200910 22:43:56.772" level="INFO">Opening browser 'chrome' to base url 'https://inovaforms.digitais.sistemaindustria.com.br/'.</msg>
+<status status="PASS" starttime="20200910 22:43:56.772" endtime="20200910 22:44:02.012"></status>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200831 13:03:05.816" endtime="20200831 13:03:07.948"></status>
+<status status="PASS" starttime="20200910 22:43:56.772" endtime="20200910 22:44:02.012"></status>
 </kw>
-<status status="PASS" starttime="20200831 13:02:59.810" endtime="20200831 13:03:07.948"></status>
-</kw>
-<kw name="Dado">
-<msg timestamp="20200831 13:03:07.953" level="FAIL">No keyword with name 'Dado' found.</msg>
-<status status="FAIL" starttime="20200831 13:03:07.953" endtime="20200831 13:03:07.953"></status>
-</kw>
-<kw name="Fechar navegador" library="SetupsTeardowns" type="teardown">
-<kw name="Run Keyword If Test Failed" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<kw name="Dado que esteja na tela inicial do site InovaForms" library="Resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
 <arguments>
-<arg>Screenshot Personalizada</arg>
+<arg>tag=title</arg>
 </arguments>
-<kw name="Screenshot Personalizada" library="SetupsTeardowns">
-<kw name="Get Current Date" library="DateTime">
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<arguments>
-<arg>result_format=%d-%m-%Y-%H.%M.%S.%f</arg>
-</arguments>
-<assign>
-<var>${agora}</var>
-</assign>
-<msg timestamp="20200831 13:03:07.955" level="INFO">${agora} = 31-08-2020-13.03.07.954534</msg>
-<status status="PASS" starttime="20200831 13:03:07.955" endtime="20200831 13:03:07.955"></status>
+<status status="PASS" starttime="20200910 22:44:02.016" endtime="20200910 22:44:02.038"></status>
 </kw>
-<kw name="Split String" library="String">
-<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<arguments>
-<arg>${TEST NAME}</arg>
-<arg>:</arg>
-</arguments>
-<assign>
-<var>${nome teste}</var>
-</assign>
-<msg timestamp="20200831 13:03:07.956" level="INFO">${nome teste} = ['Cenário 02', ' O que será feito']</msg>
-<status status="PASS" starttime="20200831 13:03:07.955" endtime="20200831 13:03:07.956"></status>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<arguments>
-<arg>screenshot-${nome teste}[0]-${agora}.png</arg>
-</arguments>
-<msg timestamp="20200831 13:03:08.260" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshot-Cen%C3%A1rio%2002-31-08-2020-13.03.07.954534.png"&gt;&lt;img src="screenshot-Cen%C3%A1rio%2002-31-08-2020-13.03.07.954534.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200831 13:03:07.956" endtime="20200831 13:03:08.260"></status>
-</kw>
-<status status="PASS" starttime="20200831 13:03:07.954" endtime="20200831 13:03:08.260"></status>
-</kw>
-<status status="PASS" starttime="20200831 13:03:07.954" endtime="20200831 13:03:08.260"></status>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200831 13:03:08.261" endtime="20200831 13:03:10.344"></status>
-</kw>
-<status status="PASS" starttime="20200831 13:03:07.954" endtime="20200831 13:03:10.344"></status>
-</kw>
-<doc>O que será feito de forma mais descritiva
-se julgar necessário</doc>
-<tags>
-<tag>Resumo do teste</tag>
-</tags>
-<status status="FAIL" starttime="20200831 13:02:59.809" endtime="20200831 13:03:10.344" critical="yes">No keyword with name 'Dado' found.</status>
-</test>
-<doc>Testar a funcionalidade de cadastro do site Localnews</doc>
-<status status="FAIL" starttime="20200831 13:02:48.887" endtime="20200831 13:03:10.346"></status>
-</suite>
-<suite id="s1-s2-s2" name="TestFuncionalidadeB" source="C:\Users\Pichau\Desktop\ProjetoTemplate\tests\testSuiteAplicativoA\TestFuncionalidadeB.robot">
-<test id="s1-s2-s2-t1" name="Cenário 01: O que será feito">
-<kw name="Abrir navegador" library="SetupsTeardowns" type="setup">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${URL}</arg>
-<arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200831 13:03:10.370" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/'.</msg>
-<status status="PASS" starttime="20200831 13:03:10.369" endtime="20200831 13:03:16.366"></status>
+<msg timestamp="20200910 22:44:02.038" level="INFO">Opening url 'https://inovaforms.digitais.sistemaindustria.com.br/'</msg>
+<status status="PASS" starttime="20200910 22:44:02.038" endtime="20200910 22:44:02.378"></status>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200831 13:03:16.366" endtime="20200831 13:03:18.487"></status>
+<status status="PASS" starttime="20200910 22:44:02.016" endtime="20200910 22:44:02.378"></status>
 </kw>
-<status status="PASS" starttime="20200831 13:03:10.369" endtime="20200831 13:03:18.487"></status>
+<kw name="Quando clicar em &quot;Criar um novo Usuário&quot;" library="Resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=${XPATHNOVOUSUARIO}</arg>
+</arguments>
+<msg timestamp="20200910 22:44:02.379" level="INFO">Clicking element 'xpath=//form/div/div/div[3]/a'.</msg>
+<status status="PASS" starttime="20200910 22:44:02.379" endtime="20200910 22:44:02.882"></status>
 </kw>
-<kw name="Dado">
-<msg timestamp="20200831 13:03:18.491" level="FAIL">No keyword with name 'Dado' found.</msg>
-<status status="FAIL" starttime="20200831 13:03:18.491" endtime="20200831 13:03:18.491"></status>
+<status status="PASS" starttime="20200910 22:44:02.379" endtime="20200910 22:44:02.883"></status>
+</kw>
+<kw name="Então será redirecionado para a página de cadastro &quot;Novo usuário&quot;" library="Resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>tag=title</arg>
+</arguments>
+<status status="PASS" starttime="20200910 22:44:02.884" endtime="20200910 22:44:02.891"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>${novo_usuario}</arg>
+</arguments>
+<status status="PASS" starttime="20200910 22:44:02.891" endtime="20200910 22:44:02.909"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:44:02.883" endtime="20200910 22:44:02.909"></status>
+</kw>
+<kw name="E ao preencher os campos incorretamente e clicar em enviar" library="Resources">
+<kw name="Preencher campos de texto" library="CommonForms">
+<arguments>
+<arg>campos=${DADOSCADASTROERRADOS}</arg>
+</arguments>
+<kw name="${id} | ${campo} IN [ &amp;{campos} ]" type="for">
+<kw name="${id} = nomeCoordenador, ${campo} = " type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200910 22:44:02.911" level="INFO">Typing text '' into text field 'nomeCoordenador'.</msg>
+<status status="PASS" starttime="20200910 22:44:02.911" endtime="20200910 22:44:03.005"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:44:02.911" endtime="20200910 22:44:03.005"></status>
+</kw>
+<kw name="${id} = telefone, ${campo} = " type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200910 22:44:03.006" level="INFO">Typing text '' into text field 'telefone'.</msg>
+<status status="PASS" starttime="20200910 22:44:03.005" endtime="20200910 22:44:03.096"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:44:03.005" endtime="20200910 22:44:03.096"></status>
+</kw>
+<kw name="${id} = cpf, ${campo} = " type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200910 22:44:03.096" level="INFO">Typing text '' into text field 'cpf'.</msg>
+<status status="PASS" starttime="20200910 22:44:03.096" endtime="20200910 22:44:03.192"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:44:03.096" endtime="20200910 22:44:03.192"></status>
+</kw>
+<kw name="${id} = email, ${campo} = " type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200910 22:44:03.193" level="INFO">Typing text '' into text field 'email'.</msg>
+<status status="PASS" starttime="20200910 22:44:03.192" endtime="20200910 22:44:03.285"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:44:03.192" endtime="20200910 22:44:03.285"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:44:02.911" endtime="20200910 22:44:03.285"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:44:02.910" endtime="20200910 22:44:03.285"></status>
+</kw>
+<kw name="Preencher senha" library="CommonForms">
+<arguments>
+<arg>campos=${DADOSSENHA2}</arg>
+</arguments>
+<kw name="${id} | ${senha} IN [ &amp;{campos} ]" type="for">
+<kw name="${id} = password1, ${senha} = " type="foritem">
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${senha}</arg>
+</arguments>
+<msg timestamp="20200910 22:44:03.286" level="INFO">Typing password into text field 'password1'.</msg>
+<msg timestamp="20200910 22:44:03.341" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20200910 22:44:03.384" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20200910 22:44:03.286" endtime="20200910 22:44:03.384"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:44:03.286" endtime="20200910 22:44:03.384"></status>
+</kw>
+<kw name="${id} = password2, ${senha} = " type="foritem">
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${senha}</arg>
+</arguments>
+<msg timestamp="20200910 22:44:03.385" level="INFO">Typing password into text field 'password2'.</msg>
+<msg timestamp="20200910 22:44:03.432" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20200910 22:44:03.475" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20200910 22:44:03.384" endtime="20200910 22:44:03.475"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:44:03.384" endtime="20200910 22:44:03.475"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:44:03.285" endtime="20200910 22:44:03.475"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:44:03.285" endtime="20200910 22:44:03.475"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>name=${NAMESUBMITCADASTRO}</arg>
+</arguments>
+<msg timestamp="20200910 22:44:03.475" level="INFO">Clicking button 'name=button'.</msg>
+<status status="PASS" starttime="20200910 22:44:03.475" endtime="20200910 22:44:03.760"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:44:02.910" endtime="20200910 22:44:03.760"></status>
+</kw>
+<kw name="Então serão exibidas &quot;6&quot; mensagens de erro" library="Resources">
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>class=${CLASSEERRO}</arg>
+</arguments>
+<assign>
+<var>${errosgerados}</var>
+</assign>
+<msg timestamp="20200910 22:44:03.779" level="INFO">${errosgerados} = 6</msg>
+<status status="PASS" starttime="20200910 22:44:03.763" endtime="20200910 22:44:03.779"></status>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<arguments>
+<arg>${erros}</arg>
+<arg>${errosgerados}</arg>
+</arguments>
+<msg timestamp="20200910 22:44:03.780" level="INFO">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;class 'int'&gt;</msg>
+<status status="PASS" starttime="20200910 22:44:03.779" endtime="20200910 22:44:03.780"></status>
+</kw>
+<status status="PASS" starttime="20200910 22:44:03.761" endtime="20200910 22:44:03.780"></status>
 </kw>
 <kw name="Fechar navegador" library="SetupsTeardowns" type="teardown">
 <kw name="Run Keyword If Test Failed" library="BuiltIn">
@@ -388,155 +433,36 @@ se julgar necessário</doc>
 <arguments>
 <arg>Screenshot Personalizada</arg>
 </arguments>
-<kw name="Screenshot Personalizada" library="SetupsTeardowns">
-<kw name="Get Current Date" library="DateTime">
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<arguments>
-<arg>result_format=%d-%m-%Y-%H.%M.%S.%f</arg>
-</arguments>
-<assign>
-<var>${agora}</var>
-</assign>
-<msg timestamp="20200831 13:03:18.493" level="INFO">${agora} = 31-08-2020-13.03.18.492955</msg>
-<status status="PASS" starttime="20200831 13:03:18.493" endtime="20200831 13:03:18.493"></status>
-</kw>
-<kw name="Split String" library="String">
-<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<arguments>
-<arg>${TEST NAME}</arg>
-<arg>:</arg>
-</arguments>
-<assign>
-<var>${nome teste}</var>
-</assign>
-<msg timestamp="20200831 13:03:18.494" level="INFO">${nome teste} = ['Cenário 01', ' O que será feito']</msg>
-<status status="PASS" starttime="20200831 13:03:18.493" endtime="20200831 13:03:18.494"></status>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<arguments>
-<arg>screenshot-${nome teste}[0]-${agora}.png</arg>
-</arguments>
-<msg timestamp="20200831 13:03:18.823" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshot-Cen%C3%A1rio%2001-31-08-2020-13.03.18.492955.png"&gt;&lt;img src="screenshot-Cen%C3%A1rio%2001-31-08-2020-13.03.18.492955.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200831 13:03:18.494" endtime="20200831 13:03:18.824"></status>
-</kw>
-<status status="PASS" starttime="20200831 13:03:18.493" endtime="20200831 13:03:18.824"></status>
-</kw>
-<status status="PASS" starttime="20200831 13:03:18.493" endtime="20200831 13:03:18.824"></status>
+<status status="PASS" starttime="20200910 22:44:03.781" endtime="20200910 22:44:03.782"></status>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200831 13:03:18.824" endtime="20200831 13:03:20.897"></status>
+<status status="PASS" starttime="20200910 22:44:03.782" endtime="20200910 22:44:05.864"></status>
 </kw>
-<status status="PASS" starttime="20200831 13:03:18.492" endtime="20200831 13:03:20.897"></status>
+<status status="PASS" starttime="20200910 22:44:03.781" endtime="20200910 22:44:05.864"></status>
 </kw>
-<doc>O que será feito de forma mais descritiva
-se julgar necessário</doc>
+<doc>Será feito o preenchimento do formulário de cadastro
+preenchendo todos os campos de forma inválida</doc>
 <tags>
-<tag>Resumo do teste</tag>
+<tag>Cadastro</tag>
 </tags>
-<status status="FAIL" starttime="20200831 13:03:10.368" endtime="20200831 13:03:20.898" critical="yes">No keyword with name 'Dado' found.</status>
+<status status="PASS" starttime="20200910 22:43:56.771" endtime="20200910 22:44:05.865" critical="yes"></status>
 </test>
-<test id="s1-s2-s2-t2" name="Cenário 02: O que será feito">
-<kw name="Abrir navegador" library="SetupsTeardowns" type="setup">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<arguments>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-</arguments>
-<msg timestamp="20200831 13:03:20.902" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/'.</msg>
-<status status="PASS" starttime="20200831 13:03:20.902" endtime="20200831 13:03:26.944"></status>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200831 13:03:26.944" endtime="20200831 13:03:29.062"></status>
-</kw>
-<status status="PASS" starttime="20200831 13:03:20.901" endtime="20200831 13:03:29.063"></status>
-</kw>
-<kw name="Dado">
-<msg timestamp="20200831 13:03:29.067" level="FAIL">No keyword with name 'Dado' found.</msg>
-<status status="FAIL" starttime="20200831 13:03:29.067" endtime="20200831 13:03:29.067"></status>
-</kw>
-<kw name="Fechar navegador" library="SetupsTeardowns" type="teardown">
-<kw name="Run Keyword If Test Failed" library="BuiltIn">
-<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
-<arguments>
-<arg>Screenshot Personalizada</arg>
-</arguments>
-<kw name="Screenshot Personalizada" library="SetupsTeardowns">
-<kw name="Get Current Date" library="DateTime">
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<arguments>
-<arg>result_format=%d-%m-%Y-%H.%M.%S.%f</arg>
-</arguments>
-<assign>
-<var>${agora}</var>
-</assign>
-<msg timestamp="20200831 13:03:29.069" level="INFO">${agora} = 31-08-2020-13.03.29.068700</msg>
-<status status="PASS" starttime="20200831 13:03:29.069" endtime="20200831 13:03:29.069"></status>
-</kw>
-<kw name="Split String" library="String">
-<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<arguments>
-<arg>${TEST NAME}</arg>
-<arg>:</arg>
-</arguments>
-<assign>
-<var>${nome teste}</var>
-</assign>
-<msg timestamp="20200831 13:03:29.070" level="INFO">${nome teste} = ['Cenário 02', ' O que será feito']</msg>
-<status status="PASS" starttime="20200831 13:03:29.069" endtime="20200831 13:03:29.070"></status>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<arguments>
-<arg>screenshot-${nome teste}[0]-${agora}.png</arg>
-</arguments>
-<msg timestamp="20200831 13:03:29.380" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshot-Cen%C3%A1rio%2002-31-08-2020-13.03.29.068700.png"&gt;&lt;img src="screenshot-Cen%C3%A1rio%2002-31-08-2020-13.03.29.068700.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20200831 13:03:29.070" endtime="20200831 13:03:29.380"></status>
-</kw>
-<status status="PASS" starttime="20200831 13:03:29.069" endtime="20200831 13:03:29.380"></status>
-</kw>
-<status status="PASS" starttime="20200831 13:03:29.068" endtime="20200831 13:03:29.380"></status>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200831 13:03:29.380" endtime="20200831 13:03:32.205"></status>
-</kw>
-<status status="PASS" starttime="20200831 13:03:29.068" endtime="20200831 13:03:32.205"></status>
-</kw>
-<doc>O que será feito de forma mais descritiva
-se julgar necessário</doc>
-<tags>
-<tag>Resumo do teste</tag>
-</tags>
-<status status="FAIL" starttime="20200831 13:03:20.900" endtime="20200831 13:03:32.206" critical="yes">No keyword with name 'Dado' found.</status>
-</test>
-<doc>Testar a funcionalidade de cadastro do site Localnews</doc>
-<status status="FAIL" starttime="20200831 13:03:10.350" endtime="20200831 13:03:32.208"></status>
-</suite>
-<status status="FAIL" starttime="20200831 13:02:48.884" endtime="20200831 13:03:32.212"></status>
-</suite>
-<status status="FAIL" starttime="20200831 13:02:47.649" endtime="20200831 13:03:32.216"></status>
+<doc>Testar a funcionalidade de cadastro do projeto InovaForms</doc>
+<status status="FAIL" starttime="20200910 22:43:46.672" endtime="20200910 22:44:05.868"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="5">Critical Tests</stat>
-<stat pass="0" fail="5">All Tests</stat>
+<stat pass="1" fail="1">Critical Tests</stat>
+<stat pass="1" fail="1">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="4">Resumo do teste</stat>
+<stat pass="1" fail="1">Cadastro</stat>
 </tag>
 <suite>
-<stat pass="0" fail="5" id="s1" name="Tests">Tests</stat>
-<stat pass="0" fail="1" id="s1-s1" name="suitesTeardown">Tests.suitesTeardown</stat>
-<stat pass="0" fail="4" id="s1-s2" name="testSuiteAplicativoA">Tests.testSuiteAplicativoA</stat>
-<stat pass="0" fail="2" id="s1-s2-s1" name="TestFuncionalidadeA">Tests.testSuiteAplicativoA.TestFuncionalidadeA</stat>
-<stat pass="0" fail="2" id="s1-s2-s2" name="TestFuncionalidadeB">Tests.testSuiteAplicativoA.TestFuncionalidadeB</stat>
+<stat pass="1" fail="1" id="s1" name="TestCadastroUsuario">TestCadastroUsuario</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20200831 13:02:49.107" level="WARN">Imported resource file 'C:\Users\Pichau\Desktop\ProjetoTemplate\resources\POs\POPagina1.robot' is empty.</msg>
 </errors>
 </robot>
