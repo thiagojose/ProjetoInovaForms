@@ -64,7 +64,7 @@ Então serão exibidas "${erros}" mensagens de erro
     Should Be Equal As Integers    ${erros}    ${errosgerados}
 
 
-# Cenário 01 Cadastro: Serão preenchidos os campos do projeto para o cadastro
+# Cenário 01 Cadastro Projeto: Serão preenchidos os campos do projeto para o cadastro
 
 Dado que esteja na tela de criação de projetos
     Page Should Contain    ${TEXTOPAGINAPROJETO}
@@ -77,3 +77,37 @@ Então serão exibidos e preenchidos os campos para descrever o projeto
 	Preencher campos de texto    campos=${DADOSPROJETO}
     Click Element    ${XPATHPROJETOANALISE}
 	Preencher campos de select    campos=${DADOSPROJETOSELECT}
+
+# Cenário 02 Cadastro Projeto: Incluir dados da Empresa
+
+Quando clicar em Incluir dados da empresa
+    Scroll Element Into View    ${XPATHICLUIREMPRESA}
+	Mouse Over       ${XPATHICLUIREMPRESA}
+    Click Element    xpath=${XPATHICLUIREMPRESA}
+
+Então será exibido a tela de seleção de empresas
+    Wait Until Page Contains Element    xpath=${XPATHINCLUIREMPRESA2}
+
+E ao clicar em adicionar empresa
+    Click Element    ${XPATHINCLUIREMPRESA2}
+
+Então será exibido o formulário para incluir os dados da empresa
+    ${randomcnpj}    Generate Random String    length=14    chars=[NUMBERS]
+	Atualiza dicionário    dicio=${DADOSEMPRESA}    chave=${NAMECNPJEMPRESA}
+...                        novachave=${NAMECNPJEMPRESA}    valorchave=${randomcnpj}
+    Atualiza dicionário    dicio=${DADOSEMPRESA}    chave=${NAMEEMPRESAINSCM}
+...                        novachave=${NAMEEMPRESAINSCM}    valorchave=${randomcnpj}
+    Atualiza dicionário    dicio=${DADOSEMPRESA}    chave=${NAMEEMPRESAINSCES}
+...                        novachave=${NAMEEMPRESAINSCES}    valorchave=${randomcnpj}
+    Preencher campos de texto    campos=${DADOSEMPRESA}
+	Preencher campos de select    campos=${DADOSEMPRESASELECT}
+	Click Element    xpath=${XPATHEMPFILIAISOPEN}
+	Click Element    xpath=${XPATHEMPRFILIAISCHECK}
+	Click Element    ${XPATHEMPRESAINCCNAE}
+	Click Element    ${XPATHEMPRESAALGUMCNAE}
+
+E ao clicar em "Incluir dados da empresa"
+    Click Element    ${XPATHADICIONAREMPRESA}
+
+Então esta será incluída no formulário de cadastro geral
+    Page Should Contain    ${TEXTO}

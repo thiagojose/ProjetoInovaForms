@@ -2,7 +2,7 @@
 
 
 ${TEXTO}                texto genérico
-${URLGEN}               www.com.br
+${URLGEN}               http://www.com.br
 
 
 ${EMAIL}        estatico@gmail.com

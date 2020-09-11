@@ -2,39 +2,40 @@
 Documentation     Testar a funcionalidade de cadastro do site Localnews
 Resource          ../../resources/Resources.robot
 Resource          ../../resources/SetupsTeardowns.robot
-Test SETUP        Abrir navegador e logar
+Test SETUP        Faz nada
 #Test TEARDOWN     Deslogar e fechar o navegador
 
 *** Test Cases ***
 
-Cenário 01 Cadastro: Serão preenchidos os campos do projeto para o cadastro
+Cenário 01 Cadastro Projeto: Serão preenchidos os campos do projeto para o cadastro
     [Documentation]    Serão preenchidos os campos gerais para cadastro
 ...	                   do projeto, não incluindo os modais individuais
     [Tags]    Cadastro
 
 ### Passos
     # Descreva as chamadas de função aqui utilizando conotação Gherkin
+	[SETUP]  Abrir navegador e logar
  	Dado que esteja na tela de criação de projetos
  	Quando clicar em adicionar projeto
- 	Então serão exibidos e preenchidos os campos para descrever o projeto
+# 	Então serão exibidos e preenchidos os campos para descrever o projeto
 
 
 
-# Cenário 02: Incluir dados da Empresa
-# 	[Documentation]    Será criado uma empresa como exemplo
-# ...	                   para incluir no cadastro de projeto
-#     [Tags]    Cadastro Empresa
-#
-# ### Passos
-# 	# Descreva as chamadas de função aqui utilizando conotação Gherkin
+Cenário 02 Cadastro Projeto: Incluir dados da Empresa
+	[Documentation]    Será criado uma empresa como exemplo
+...	                   para incluir no cadastro de projeto
+    [Tags]    Cadastro Empresa
+
+### Passos
+	# Descreva as chamadas de função aqui utilizando conotação Gherkin
 # 	Dado que esteja na tela de criação de projetos
-# 	Quando clicar em Incluir dados da empresa
-# 	Então será exibido a tela de seleção de empresas
-# 	E ao clicar em adicionar empresa
-# 	Então será exibido o formulário para incluir os dados da empresa
-# 	E ao clicar em "Incluir dados da empresa"
-# 	Então esta será incluída no formulário de cadastro geral
-#
+	Quando clicar em Incluir dados da empresa
+	Então será exibido a tela de seleção de empresas
+	E ao clicar em adicionar empresa
+	Então será exibido o formulário para incluir os dados da empresa
+	E ao clicar em "Incluir dados da empresa"
+	Então esta será incluída no formulário de cadastro geral
+
 # Cenário 03: Incluir Histórico
 # 	[Documentation]    Será criado um histórico como exemplo
 # ...	                   para incluir no cadastro de projeto

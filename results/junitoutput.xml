@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestCadastroProjeto" tests="1" errors="0" failures="0" skipped="0" time="13.912">
-<testcase classname="TestCadastroProjeto" name="Cenário 01 Cadastro: Serão preenchidos os campos do projeto para o cadastro" time="13.512">
+<testsuite name="TestCadastroProjeto" tests="2" errors="0" failures="0" skipped="0" time="15.867">
+<testcase classname="TestCadastroProjeto" name="Cenário 01 Cadastro Projeto: Serão preenchidos os campos do projeto para o cadastro" time="11.248">
+</testcase>
+<testcase classname="TestCadastroProjeto" name="Cenário 02 Cadastro Projeto: Incluir dados da Empresa" time="4.162">
 </testcase>
 </testsuite>

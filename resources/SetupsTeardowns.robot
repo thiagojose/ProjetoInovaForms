@@ -5,7 +5,7 @@ Resource    APIRequests.robot
 *** Keywords ***
 
 Abrir navegador
-    Open Browser    ${URL}   ${BROWSER}
+    Open Browser    ${URL}   ${BROWSER}    alias=${BROWSER}
 #	Maximize Browser Window
 
 Fechar navegador

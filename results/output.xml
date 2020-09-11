@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200911 13:18:32.789" rpa="false">
+<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200911 17:13:09.587" rpa="false">
 <suite id="s1" name="TestCadastroProjeto" source="C:\Users\Pichau\Desktop\ProjetoInovaForms\tests\testSuiteInovaForms\TestCadastroProjeto.robot">
-<test id="s1-t1" name="Cenário 01 Cadastro: Serão preenchidos os campos do projeto para o cadastro">
+<test id="s1-t1" name="Cenário 01 Cadastro Projeto: Serão preenchidos os campos do projeto para o cadastro">
 <kw name="Abrir navegador e logar" library="SetupsTeardowns" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
@@ -9,8 +9,8 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200911 13:18:33.190" level="INFO">Opening browser 'chrome' to base url 'https://inovaforms.digitais.sistemaindustria.com.br/'.</msg>
-<status status="PASS" starttime="20200911 13:18:33.189" endtime="20200911 13:18:38.438"></status>
+<msg timestamp="20200911 17:13:10.043" level="INFO">Opening browser 'chrome' to base url 'https://inovaforms.digitais.sistemaindustria.com.br/'.</msg>
+<status status="PASS" starttime="20200911 17:13:10.042" endtime="20200911 17:13:15.449"></status>
 </kw>
 <kw name="Então é efetuado o login" library="Resources">
 <kw name="Input Text" library="SeleniumLibrary">
@@ -19,8 +19,8 @@
 <arg>${NAMEUSERNAME}</arg>
 <arg>${EMAIL}</arg>
 </arguments>
-<msg timestamp="20200911 13:18:38.439" level="INFO">Typing text 'estatico@gmail.com' into text field 'username'.</msg>
-<status status="PASS" starttime="20200911 13:18:38.438" endtime="20200911 13:18:38.551"></status>
+<msg timestamp="20200911 17:13:15.450" level="INFO">Typing text 'estatico@gmail.com' into text field 'username'.</msg>
+<status status="PASS" starttime="20200911 17:13:15.449" endtime="20200911 17:13:15.574"></status>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <doc>Types the given password into the text field identified by ``locator``.</doc>
@@ -28,22 +28,22 @@
 <arg>${IDSENHA}</arg>
 <arg>${SENHA}</arg>
 </arguments>
-<msg timestamp="20200911 13:18:38.552" level="INFO">Typing password into text field 'password'.</msg>
-<msg timestamp="20200911 13:18:38.588" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20200911 13:18:38.634" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20200911 13:18:38.551" endtime="20200911 13:18:38.634"></status>
+<msg timestamp="20200911 17:13:15.575" level="INFO">Typing password into text field 'password'.</msg>
+<msg timestamp="20200911 17:13:15.616" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20200911 17:13:15.673" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20200911 17:13:15.575" endtime="20200911 17:13:15.673"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath=${XPATHLOGIN}</arg>
 </arguments>
-<msg timestamp="20200911 13:18:38.635" level="INFO">Clicking element 'xpath=//form/div/div/div[3]/button'.</msg>
-<status status="PASS" starttime="20200911 13:18:38.635" endtime="20200911 13:18:39.753"></status>
+<msg timestamp="20200911 17:13:15.673" level="INFO">Clicking element 'xpath=//form/div/div/div[3]/button'.</msg>
+<status status="PASS" starttime="20200911 17:13:15.673" endtime="20200911 17:13:16.779"></status>
 </kw>
-<status status="PASS" starttime="20200911 13:18:38.438" endtime="20200911 13:18:39.753"></status>
+<status status="PASS" starttime="20200911 17:13:15.449" endtime="20200911 17:13:16.779"></status>
 </kw>
-<status status="PASS" starttime="20200911 13:18:33.189" endtime="20200911 13:18:39.754"></status>
+<status status="PASS" starttime="20200911 17:13:10.042" endtime="20200911 17:13:16.779"></status>
 </kw>
 <kw name="Dado que esteja na tela de criação de projetos" library="Resources">
 <kw name="Page Should Contain" library="SeleniumLibrary">
@@ -51,10 +51,10 @@
 <arguments>
 <arg>${TEXTOPAGINAPROJETO}</arg>
 </arguments>
-<msg timestamp="20200911 13:18:39.771" level="INFO">Current page contains text 'Meus projetos'.</msg>
-<status status="PASS" starttime="20200911 13:18:39.755" endtime="20200911 13:18:39.771"></status>
+<msg timestamp="20200911 17:13:16.798" level="INFO">Current page contains text 'Meus projetos'.</msg>
+<status status="PASS" starttime="20200911 17:13:16.781" endtime="20200911 17:13:16.798"></status>
 </kw>
-<status status="PASS" starttime="20200911 13:18:39.754" endtime="20200911 13:18:39.771"></status>
+<status status="PASS" starttime="20200911 17:13:16.781" endtime="20200911 17:13:16.798"></status>
 </kw>
 <kw name="Quando clicar em adicionar projeto" library="Resources">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -62,295 +62,507 @@
 <arguments>
 <arg>xpath=${XPATHADICIONARPROJETO}</arg>
 </arguments>
-<msg timestamp="20200911 13:18:39.772" level="INFO">Clicking element 'xpath=//a[@href="/projetos/cadastrar"]'.</msg>
-<status status="PASS" starttime="20200911 13:18:39.772" endtime="20200911 13:18:44.310"></status>
+<msg timestamp="20200911 17:13:16.799" level="INFO">Clicking element 'xpath=//a[@href="/projetos/cadastrar"]'.</msg>
+<status status="PASS" starttime="20200911 17:13:16.799" endtime="20200911 17:13:21.288"></status>
 </kw>
-<status status="PASS" starttime="20200911 13:18:39.772" endtime="20200911 13:18:44.310"></status>
-</kw>
-<kw name="Então serão exibidos e preenchidos os campos para descrever o projeto" library="Resources">
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>${TEXTONOVOPROJETO}</arg>
-</arguments>
-<status status="PASS" starttime="20200911 13:18:44.312" endtime="20200911 13:18:44.391"></status>
-</kw>
-<kw name="Preencher campos de texto" library="CommonForms">
-<arguments>
-<arg>campos=${DADOSPROJETO}</arg>
-</arguments>
-<kw name="${id} | ${campo} IN [ &amp;{campos} ]" type="for">
-<kw name="${id} = cargo_coordenador, ${campo} = texto genérico" type="foritem">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${id}</arg>
-<arg>${campo}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:44.393" level="INFO">Typing text 'texto genérico' into text field 'cargo_coordenador'.</msg>
-<status status="PASS" starttime="20200911 13:18:44.392" endtime="20200911 13:18:44.522"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:44.392" endtime="20200911 13:18:44.522"></status>
-</kw>
-<kw name="${id} = link_coordenador, ${campo} = texto genérico" type="foritem">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${id}</arg>
-<arg>${campo}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:44.522" level="INFO">Typing text 'texto genérico' into text field 'link_coordenador'.</msg>
-<status status="PASS" starttime="20200911 13:18:44.522" endtime="20200911 13:18:44.644"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:44.522" endtime="20200911 13:18:44.644"></status>
-</kw>
-<kw name="${id} = horas_dedicadas_coordenador, ${campo} = texto genérico" type="foritem">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${id}</arg>
-<arg>${campo}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:44.645" level="INFO">Typing text 'texto genérico' into text field 'horas_dedicadas_coordenador'.</msg>
-<status status="PASS" starttime="20200911 13:18:44.645" endtime="20200911 13:18:44.763"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:44.645" endtime="20200911 13:18:44.763"></status>
-</kw>
-<kw name="${id} = coordenador_resposabilidades, ${campo} = texto genérico" type="foritem">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${id}</arg>
-<arg>${campo}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:44.763" level="INFO">Typing text 'texto genérico' into text field 'coordenador_resposabilidades'.</msg>
-<status status="PASS" starttime="20200911 13:18:44.763" endtime="20200911 13:18:44.910"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:44.763" endtime="20200911 13:18:44.910"></status>
-</kw>
-<kw name="${id} = titulo, ${campo} = texto genérico" type="foritem">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${id}</arg>
-<arg>${campo}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:44.911" level="INFO">Typing text 'texto genérico' into text field 'titulo'.</msg>
-<status status="PASS" starttime="20200911 13:18:44.911" endtime="20200911 13:18:45.028"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:44.911" endtime="20200911 13:18:45.028"></status>
-</kw>
-<kw name="${id} = palavra_chave, ${campo} = texto genérico" type="foritem">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${id}</arg>
-<arg>${campo}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:45.028" level="INFO">Typing text 'texto genérico' into text field 'palavra_chave'.</msg>
-<status status="PASS" starttime="20200911 13:18:45.028" endtime="20200911 13:18:45.158"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:45.028" endtime="20200911 13:18:45.158"></status>
-</kw>
-<kw name="${id} = objetivo, ${campo} = texto genérico" type="foritem">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${id}</arg>
-<arg>${campo}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:45.159" level="INFO">Typing text 'texto genérico' into text field 'objetivo'.</msg>
-<status status="PASS" starttime="20200911 13:18:45.158" endtime="20200911 13:18:45.278"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:45.158" endtime="20200911 13:18:45.278"></status>
-</kw>
-<kw name="${id} = relevancia, ${campo} = texto genérico" type="foritem">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${id}</arg>
-<arg>${campo}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:45.278" level="INFO">Typing text 'texto genérico' into text field 'relevancia'.</msg>
-<status status="PASS" starttime="20200911 13:18:45.278" endtime="20200911 13:18:45.400"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:45.278" endtime="20200911 13:18:45.400"></status>
-</kw>
-<kw name="${id} = metodologia, ${campo} = texto genérico" type="foritem">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${id}</arg>
-<arg>${campo}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:45.400" level="INFO">Typing text 'texto genérico' into text field 'metodologia'.</msg>
-<status status="PASS" starttime="20200911 13:18:45.400" endtime="20200911 13:18:45.520"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:45.400" endtime="20200911 13:18:45.520"></status>
-</kw>
-<kw name="${id} = impactos, ${campo} = texto genérico" type="foritem">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${id}</arg>
-<arg>${campo}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:45.520" level="INFO">Typing text 'texto genérico' into text field 'impactos'.</msg>
-<status status="PASS" starttime="20200911 13:18:45.520" endtime="20200911 13:18:45.639"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:45.520" endtime="20200911 13:18:45.639"></status>
-</kw>
-<kw name="${id} = visibilidade_tecnica, ${campo} = texto genérico" type="foritem">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${id}</arg>
-<arg>${campo}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:45.639" level="INFO">Typing text 'texto genérico' into text field 'visibilidade_tecnica'.</msg>
-<status status="PASS" starttime="20200911 13:18:45.639" endtime="20200911 13:18:45.777"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:45.639" endtime="20200911 13:18:45.777"></status>
-</kw>
-<kw name="${id} = visibilidade_economica, ${campo} = texto genérico" type="foritem">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${id}</arg>
-<arg>${campo}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:45.778" level="INFO">Typing text 'texto genérico' into text field 'visibilidade_economica'.</msg>
-<status status="PASS" starttime="20200911 13:18:45.778" endtime="20200911 13:18:45.899"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:45.777" endtime="20200911 13:18:45.899"></status>
-</kw>
-<kw name="${id} = recursosTerceiros, ${campo} = 1" type="foritem">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${id}</arg>
-<arg>${campo}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:45.900" level="INFO">Typing text '1' into text field 'recursosTerceiros'.</msg>
-<status status="PASS" starttime="20200911 13:18:45.899" endtime="20200911 13:18:46.019"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:45.899" endtime="20200911 13:18:46.019"></status>
-</kw>
-<kw name="${id} = recursosProprios, ${campo} = 1" type="foritem">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${id}</arg>
-<arg>${campo}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:46.019" level="INFO">Typing text '1' into text field 'recursosProprios'.</msg>
-<status status="PASS" starttime="20200911 13:18:46.019" endtime="20200911 13:18:46.145"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:46.019" endtime="20200911 13:18:46.145"></status>
-</kw>
-<kw name="${id} = desafio_bolsistas, ${campo} = texto genérico" type="foritem">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${id}</arg>
-<arg>${campo}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:46.146" level="INFO">Typing text 'texto genérico' into text field 'desafio_bolsistas'.</msg>
-<status status="PASS" starttime="20200911 13:18:46.146" endtime="20200911 13:18:46.265"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:46.146" endtime="20200911 13:18:46.265"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:44.392" endtime="20200911 13:18:46.265"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:44.392" endtime="20200911 13:18:46.265"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${XPATHPROJETOANALISE}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:46.265" level="INFO">Clicking element '//form/div/div[7]/div[1]/div[1]/label[@for="analise_iel_sim"]'.</msg>
-<status status="PASS" starttime="20200911 13:18:46.265" endtime="20200911 13:18:46.334"></status>
-</kw>
-<kw name="Preencher campos de select" library="CommonForms">
-<arguments>
-<arg>campos=${DADOSPROJETOSELECT}</arg>
-</arguments>
-<kw name="${id} | ${label} IN [ &amp;{campos} ]" type="for">
-<kw name="${id} = setor, ${label} = Automotivo" type="foritem">
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<arguments>
-<arg>${id}</arg>
-<arg>${label}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:46.336" level="INFO">Selecting options from selection list 'setor' by label Automotivo.</msg>
-<status status="PASS" starttime="20200911 13:18:46.336" endtime="20200911 13:18:46.434"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:46.335" endtime="20200911 13:18:46.434"></status>
-</kw>
-<kw name="${id} = tipo_inovacao, ${label} = Processo" type="foritem">
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<arguments>
-<arg>${id}</arg>
-<arg>${label}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:46.435" level="INFO">Selecting options from selection list 'tipo_inovacao' by label Processo.</msg>
-<status status="PASS" starttime="20200911 13:18:46.435" endtime="20200911 13:18:46.522"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:46.434" endtime="20200911 13:18:46.522"></status>
-</kw>
-<kw name="${id} = grau_inovacao, ${label} = Radical" type="foritem">
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<arguments>
-<arg>${id}</arg>
-<arg>${label}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:46.522" level="INFO">Selecting options from selection list 'grau_inovacao' by label Radical.</msg>
-<status status="PASS" starttime="20200911 13:18:46.522" endtime="20200911 13:18:46.608"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:46.522" endtime="20200911 13:18:46.608"></status>
-</kw>
-<kw name="${id} = regional_iel, ${label} = Alagoas - ( AL )" type="foritem">
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<arguments>
-<arg>${id}</arg>
-<arg>${label}</arg>
-</arguments>
-<msg timestamp="20200911 13:18:46.609" level="INFO">Selecting options from selection list 'regional_iel' by label Alagoas - ( AL ).</msg>
-<status status="PASS" starttime="20200911 13:18:46.608" endtime="20200911 13:18:46.699"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:46.608" endtime="20200911 13:18:46.699"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:46.335" endtime="20200911 13:18:46.699"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:46.334" endtime="20200911 13:18:46.699"></status>
-</kw>
-<status status="PASS" starttime="20200911 13:18:44.311" endtime="20200911 13:18:46.699"></status>
+<status status="PASS" starttime="20200911 17:13:16.799" endtime="20200911 17:13:21.288"></status>
 </kw>
 <doc>Serão preenchidos os campos gerais para cadastro
 do projeto, não incluindo os modais individuais</doc>
 <tags>
 <tag>Cadastro</tag>
 </tags>
-<status status="PASS" starttime="20200911 13:18:33.188" endtime="20200911 13:18:46.700" critical="yes"></status>
+<status status="PASS" starttime="20200911 17:13:10.041" endtime="20200911 17:13:21.289" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Cenário 02 Cadastro Projeto: Incluir dados da Empresa">
+<kw name="Faz nada" library="Resources" type="setup">
+<kw name="Pass Execution" library="BuiltIn">
+<doc>Skips rest of the current test, setup, or teardown with PASS status.</doc>
+<arguments>
+<arg>template</arg>
+</arguments>
+<msg timestamp="20200911 17:13:21.292" level="INFO">Execution passed with message:
+template</msg>
+<status status="PASS" starttime="20200911 17:13:21.292" endtime="20200911 17:13:21.292"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:21.291" endtime="20200911 17:13:21.292"></status>
+</kw>
+<kw name="Quando clicar em Incluir dados da empresa" library="Resources">
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${XPATHICLUIREMPRESA}</arg>
+</arguments>
+<status status="PASS" starttime="20200911 17:13:21.293" endtime="20200911 17:13:21.585"></status>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${XPATHICLUIREMPRESA}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:21.586" level="INFO">Simulating Mouse Over on element '//*[@id="link-empresa-selecionada"]'.</msg>
+<status status="PASS" starttime="20200911 17:13:21.585" endtime="20200911 17:13:21.861"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=${XPATHICLUIREMPRESA}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:21.861" level="INFO">Clicking element 'xpath=//*[@id="link-empresa-selecionada"]'.</msg>
+<status status="PASS" starttime="20200911 17:13:21.861" endtime="20200911 17:13:21.934"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:21.292" endtime="20200911 17:13:21.934"></status>
+</kw>
+<kw name="Então será exibido a tela de seleção de empresas" library="Resources">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>xpath=${XPATHINCLUIREMPRESA2}</arg>
+</arguments>
+<status status="PASS" starttime="20200911 17:13:21.935" endtime="20200911 17:13:21.958"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:21.935" endtime="20200911 17:13:21.958"></status>
+</kw>
+<kw name="E ao clicar em adicionar empresa" library="Resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${XPATHINCLUIREMPRESA2}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:21.959" level="INFO">Clicking element '//*[@id="container-empresa-select"]/div/footer/button'.</msg>
+<status status="PASS" starttime="20200911 17:13:21.959" endtime="20200911 17:13:22.095"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:21.958" endtime="20200911 17:13:22.095"></status>
+</kw>
+<kw name="Então será exibido o formulário para incluir os dados da empresa" library="Resources">
+<kw name="Generate Random String" library="String">
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<arguments>
+<arg>length=14</arg>
+<arg>chars=[NUMBERS]</arg>
+</arguments>
+<assign>
+<var>${randomcnpj}</var>
+</assign>
+<msg timestamp="20200911 17:13:22.097" level="INFO">${randomcnpj} = 43098216455675</msg>
+<status status="PASS" starttime="20200911 17:13:22.096" endtime="20200911 17:13:22.097"></status>
+</kw>
+<kw name="Atualiza dicionário" library="CommonForms">
+<arguments>
+<arg>dicio=${DADOSEMPRESA}</arg>
+<arg>chave=${NAMECNPJEMPRESA}</arg>
+<arg>novachave=${NAMECNPJEMPRESA}</arg>
+<arg>valorchave=${randomcnpj}</arg>
+</arguments>
+<kw name="Remove From Dictionary" library="Collections">
+<doc>Removes the given ``keys`` from the ``dictionary``.</doc>
+<arguments>
+<arg>${DICIO}</arg>
+<arg>${CHAVE}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:22.098" level="INFO">Removed item with key 'cnpj' and value '11111111111111'.</msg>
+<status status="PASS" starttime="20200911 17:13:22.098" endtime="20200911 17:13:22.098"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${DICIO}</arg>
+<arg>${NOVACHAVE}</arg>
+<arg>${VALORCHAVE}</arg>
+</arguments>
+<status status="PASS" starttime="20200911 17:13:22.098" endtime="20200911 17:13:22.099"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>${DICIO}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:22.099" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20200911 17:13:22.099" endtime="20200911 17:13:22.099"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:22.097" endtime="20200911 17:13:22.099"></status>
+</kw>
+<kw name="Atualiza dicionário" library="CommonForms">
+<arguments>
+<arg>dicio=${DADOSEMPRESA}</arg>
+<arg>chave=${NAMEEMPRESAINSCM}</arg>
+<arg>novachave=${NAMEEMPRESAINSCM}</arg>
+<arg>valorchave=${randomcnpj}</arg>
+</arguments>
+<kw name="Remove From Dictionary" library="Collections">
+<doc>Removes the given ``keys`` from the ``dictionary``.</doc>
+<arguments>
+<arg>${DICIO}</arg>
+<arg>${CHAVE}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:22.101" level="INFO">Removed item with key 'inscricao_municipal' and value 'texto genérico'.</msg>
+<status status="PASS" starttime="20200911 17:13:22.100" endtime="20200911 17:13:22.101"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${DICIO}</arg>
+<arg>${NOVACHAVE}</arg>
+<arg>${VALORCHAVE}</arg>
+</arguments>
+<status status="PASS" starttime="20200911 17:13:22.101" endtime="20200911 17:13:22.101"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>${DICIO}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:22.102" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20200911 17:13:22.101" endtime="20200911 17:13:22.102"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:22.099" endtime="20200911 17:13:22.102"></status>
+</kw>
+<kw name="Atualiza dicionário" library="CommonForms">
+<arguments>
+<arg>dicio=${DADOSEMPRESA}</arg>
+<arg>chave=${NAMEEMPRESAINSCES}</arg>
+<arg>novachave=${NAMEEMPRESAINSCES}</arg>
+<arg>valorchave=${randomcnpj}</arg>
+</arguments>
+<kw name="Remove From Dictionary" library="Collections">
+<doc>Removes the given ``keys`` from the ``dictionary``.</doc>
+<arguments>
+<arg>${DICIO}</arg>
+<arg>${CHAVE}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:22.103" level="INFO">Removed item with key 'inscricao_estadual' and value 'texto genérico'.</msg>
+<status status="PASS" starttime="20200911 17:13:22.103" endtime="20200911 17:13:22.103"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${DICIO}</arg>
+<arg>${NOVACHAVE}</arg>
+<arg>${VALORCHAVE}</arg>
+</arguments>
+<status status="PASS" starttime="20200911 17:13:22.103" endtime="20200911 17:13:22.104"></status>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<doc>Returns from the enclosing user keyword.</doc>
+<arguments>
+<arg>${DICIO}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:22.104" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20200911 17:13:22.104" endtime="20200911 17:13:22.104"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:22.102" endtime="20200911 17:13:22.104"></status>
+</kw>
+<kw name="Preencher campos de texto" library="CommonForms">
+<arguments>
+<arg>campos=${DADOSEMPRESA}</arg>
+</arguments>
+<kw name="${id} | ${campo} IN [ &amp;{campos} ]" type="for">
+<kw name="${id} = nome_fantasia, ${campo} = texto genérico" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:22.106" level="INFO">Typing text 'texto genérico' into text field 'nome_fantasia'.</msg>
+<status status="PASS" starttime="20200911 17:13:22.105" endtime="20200911 17:13:22.277"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:22.105" endtime="20200911 17:13:22.277"></status>
+</kw>
+<kw name="${id} = razao_social, ${campo} = texto genérico" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:22.278" level="INFO">Typing text 'texto genérico' into text field 'razao_social'.</msg>
+<status status="PASS" starttime="20200911 17:13:22.277" endtime="20200911 17:13:22.436"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:22.277" endtime="20200911 17:13:22.436"></status>
+</kw>
+<kw name="${id} = endereco, ${campo} = texto genérico" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:22.436" level="INFO">Typing text 'texto genérico' into text field 'endereco'.</msg>
+<status status="PASS" starttime="20200911 17:13:22.436" endtime="20200911 17:13:22.598"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:22.436" endtime="20200911 17:13:22.598"></status>
+</kw>
+<kw name="${id} = cep, ${campo} = 32222222" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:22.598" level="INFO">Typing text '32222222' into text field 'cep'.</msg>
+<status status="PASS" starttime="20200911 17:13:22.598" endtime="20200911 17:13:22.725"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:22.598" endtime="20200911 17:13:22.725"></status>
+</kw>
+<kw name="${id} = cidade, ${campo} = texto genérico" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:22.726" level="INFO">Typing text 'texto genérico' into text field 'cidade'.</msg>
+<status status="PASS" starttime="20200911 17:13:22.725" endtime="20200911 17:13:22.869"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:22.725" endtime="20200911 17:13:22.869"></status>
+</kw>
+<kw name="${id} = link_cnpq, ${campo} = http://www.com.br" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:22.870" level="INFO">Typing text 'http://www.com.br' into text field 'link_cnpq'.</msg>
+<status status="PASS" starttime="20200911 17:13:22.869" endtime="20200911 17:13:23.026"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:22.869" endtime="20200911 17:13:23.026"></status>
+</kw>
+<kw name="${id} = numero_funcionarios, ${campo} = 5" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:23.026" level="INFO">Typing text '5' into text field 'numero_funcionarios'.</msg>
+<status status="PASS" starttime="20200911 17:13:23.026" endtime="20200911 17:13:23.151"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:23.026" endtime="20200911 17:13:23.152"></status>
+</kw>
+<kw name="${id} = site, ${campo} = http://www.com.br" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:23.152" level="INFO">Typing text 'http://www.com.br' into text field 'site'.</msg>
+<status status="PASS" starttime="20200911 17:13:23.152" endtime="20200911 17:13:23.324"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:23.152" endtime="20200911 17:13:23.324"></status>
+</kw>
+<kw name="${id} = ano_fundacao, ${campo} = 10101990" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:23.325" level="INFO">Typing text '10101990' into text field 'ano_fundacao'.</msg>
+<status status="PASS" starttime="20200911 17:13:23.324" endtime="20200911 17:13:23.467"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:23.324" endtime="20200911 17:13:23.467"></status>
+</kw>
+<kw name="${id} = missao, ${campo} = texto genérico" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:23.468" level="INFO">Typing text 'texto genérico' into text field 'missao'.</msg>
+<status status="PASS" starttime="20200911 17:13:23.467" endtime="20200911 17:13:23.617"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:23.467" endtime="20200911 17:13:23.617"></status>
+</kw>
+<kw name="${id} = visao, ${campo} = texto genérico" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:23.618" level="INFO">Typing text 'texto genérico' into text field 'visao'.</msg>
+<status status="PASS" starttime="20200911 17:13:23.618" endtime="20200911 17:13:23.779"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:23.617" endtime="20200911 17:13:23.779"></status>
+</kw>
+<kw name="${id} = historico_inovacao, ${campo} = texto genérico" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:23.779" level="INFO">Typing text 'texto genérico' into text field 'historico_inovacao'.</msg>
+<status status="PASS" starttime="20200911 17:13:23.779" endtime="20200911 17:13:23.906"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:23.779" endtime="20200911 17:13:23.906"></status>
+</kw>
+<kw name="${id} = cnpj, ${campo} = 43098216455675" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:23.906" level="INFO">Typing text '43098216455675' into text field 'cnpj'.</msg>
+<status status="PASS" starttime="20200911 17:13:23.906" endtime="20200911 17:13:24.067"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:23.906" endtime="20200911 17:13:24.067"></status>
+</kw>
+<kw name="${id} = inscricao_municipal, ${campo} = 43098216455675" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:24.067" level="INFO">Typing text '43098216455675' into text field 'inscricao_municipal'.</msg>
+<status status="PASS" starttime="20200911 17:13:24.067" endtime="20200911 17:13:24.215"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:24.067" endtime="20200911 17:13:24.215"></status>
+</kw>
+<kw name="${id} = inscricao_estadual, ${campo} = 43098216455675" type="foritem">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${campo}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:24.216" level="INFO">Typing text '43098216455675' into text field 'inscricao_estadual'.</msg>
+<status status="PASS" starttime="20200911 17:13:24.215" endtime="20200911 17:13:24.363"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:24.215" endtime="20200911 17:13:24.363"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:22.105" endtime="20200911 17:13:24.363"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:22.104" endtime="20200911 17:13:24.363"></status>
+</kw>
+<kw name="Preencher campos de select" library="CommonForms">
+<arguments>
+<arg>campos=${DADOSEMPRESASELECT}</arg>
+</arguments>
+<kw name="${id} | ${label} IN [ &amp;{campos} ]" type="for">
+<kw name="${id} = tipo_empresa, ${label} = Matriz" type="foritem">
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${label}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:24.364" level="INFO">Selecting options from selection list 'tipo_empresa' by label Matriz.</msg>
+<status status="PASS" starttime="20200911 17:13:24.364" endtime="20200911 17:13:24.458"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:24.364" endtime="20200911 17:13:24.458"></status>
+</kw>
+<kw name="${id} = uf, ${label} = Minas Gerais - ( MG )" type="foritem">
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${label}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:24.459" level="INFO">Selecting options from selection list 'uf' by label Minas Gerais - ( MG ).</msg>
+<status status="PASS" starttime="20200911 17:13:24.459" endtime="20200911 17:13:24.552"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:24.458" endtime="20200911 17:13:24.552"></status>
+</kw>
+<kw name="${id} = porte, ${label} = Grande empresa: Receita operacional bruta anual ou renda anual: Maior que R$ 300 milhões" type="foritem">
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>${id}</arg>
+<arg>${label}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:24.553" level="INFO">Selecting options from selection list 'porte' by label Grande empresa: Receita operacional bruta anual ou renda anual: Maior que R$ 300 milhões.</msg>
+<status status="PASS" starttime="20200911 17:13:24.552" endtime="20200911 17:13:24.643"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:24.552" endtime="20200911 17:13:24.643"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:24.364" endtime="20200911 17:13:24.643"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:24.363" endtime="20200911 17:13:24.643"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=${XPATHEMPFILIAISOPEN}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:24.643" level="INFO">Clicking element 'xpath=//*[@id="form-cadastrar-empresa"]/a'.</msg>
+<status status="PASS" starttime="20200911 17:13:24.643" endtime="20200911 17:13:24.717"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=${XPATHEMPRFILIAISCHECK}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:24.718" level="INFO">Clicking element 'xpath=//*[@id="checkbox-estados-filiais"]/div[13]/label'.</msg>
+<status status="PASS" starttime="20200911 17:13:24.718" endtime="20200911 17:13:24.800"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${XPATHEMPRESAINCCNAE}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:24.801" level="INFO">Clicking element '//*[@id="form-cadastrar-empresa"]/span/div/a/span'.</msg>
+<status status="PASS" starttime="20200911 17:13:24.801" endtime="20200911 17:13:25.111"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${XPATHEMPRESAALGUMCNAE}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:25.111" level="INFO">Clicking element '//*[@id="cnae-empresa-6"]/a/div/div'.</msg>
+<status status="PASS" starttime="20200911 17:13:25.111" endtime="20200911 17:13:25.241"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:22.096" endtime="20200911 17:13:25.241"></status>
+</kw>
+<kw name="E ao clicar em &quot;Incluir dados da empresa&quot;" library="Resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${XPATHADICIONAREMPRESA}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:25.242" level="INFO">Clicking element '//*[@id="form-cadastrar-empresa"]/footer/button'.</msg>
+<status status="PASS" starttime="20200911 17:13:25.242" endtime="20200911 17:13:25.340"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:25.242" endtime="20200911 17:13:25.340"></status>
+</kw>
+<kw name="Então esta será incluída no formulário de cadastro geral" library="Resources">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${TEXTO}</arg>
+</arguments>
+<msg timestamp="20200911 17:13:25.452" level="INFO">Current page contains text 'texto genérico'.</msg>
+<status status="PASS" starttime="20200911 17:13:25.341" endtime="20200911 17:13:25.452"></status>
+</kw>
+<status status="PASS" starttime="20200911 17:13:25.340" endtime="20200911 17:13:25.452"></status>
+</kw>
+<doc>Será criado uma empresa como exemplo
+para incluir no cadastro de projeto</doc>
+<tags>
+<tag>Cadastro Empresa</tag>
+</tags>
+<status status="PASS" starttime="20200911 17:13:21.291" endtime="20200911 17:13:25.453" critical="yes">template</status>
 </test>
 <doc>Testar a funcionalidade de cadastro do site Localnews</doc>
-<status status="PASS" starttime="20200911 13:18:32.790" endtime="20200911 13:18:46.702"></status>
+<status status="PASS" starttime="20200911 17:13:09.588" endtime="20200911 17:13:25.455"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0">Critical Tests</stat>
-<stat pass="1" fail="0">All Tests</stat>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
 </total>
 <tag>
 <stat pass="1" fail="0">Cadastro</stat>
+<stat pass="1" fail="0">Cadastro Empresa</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" id="s1" name="TestCadastroProjeto">TestCadastroProjeto</stat>
+<stat pass="2" fail="0" id="s1" name="TestCadastroProjeto">TestCadastroProjeto</stat>
 </suite>
 </statistics>
 <errors>
