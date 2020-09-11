@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestCadastroUsuario" tests="2" errors="0" failures="1" skipped="0" time="19.196">
-<testcase classname="TestCadastroUsuario" name="Cenário 01 Cadastro: Cadastrar um novo usuário com sucesso" time="9.717">
-<failure message="Page should have contained element 'xpath=//form/div/div/div[3]/button' but did not." type="AssertionError"></failure>
-</testcase>
-<testcase classname="TestCadastroUsuario" name="Cenário 02 Cadastro: Falhar cadastro de um novo usuário com sucesso" time="9.094">
+<testsuite name="TestCadastroProjeto" tests="1" errors="0" failures="0" skipped="0" time="13.912">
+<testcase classname="TestCadastroProjeto" name="Cenário 01 Cadastro: Serão preenchidos os campos do projeto para o cadastro" time="13.512">
 </testcase>
 </testsuite>

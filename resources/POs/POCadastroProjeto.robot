@@ -1,3 +1,87 @@
 *** Variables ***
 
-${XPATHENVIARPROJETO}    //form/div/button[@class="pp-btn pp-enabled"]
+
+
+
+${XPATHADICIONARPROJETO}    //a[@href="/projetos/cadastrar"]
+
+${TEXTOPAGINAPROJETO}       Meus projetos
+${TEXTONOVOPROJETO}         Novo projeto
+
+# DADOS GERAIS DE CADASTRO
+
+${IDPROJETOCARGO}           cargo_coordenador
+${PROJETOCARGO}             ${TEXTO}
+
+${IDPROJETOLATTES}          link_coordenador
+${PROJETOLATTES}            ${TEXTO}
+
+${IDPROJETOHORASSEM}        horas_dedicadas_coordenador
+${PROJETOHORASSEM}          1
+
+${IDPROJETORESP}            coordenador_resposabilidades
+${PROJETORESP}              ${TEXTO}
+
+${IDPROJETOTITULO}          titulo
+${PROJETOTITULO}            ${TEXTO}
+
+${IDPROJETOPCHAVES}         palavra_chave
+${PROJETOPCHAVES}           ${TEXTO}
+
+${IDPROJETOOBJETIVO}        objetivo
+${PROJETOOBJETIVO}          ${TEXTO}
+
+${IDPROJETOSETORSELECT}     setor
+${PROJETOSETORSELECT}       Automotivo
+
+${IDPROJETORELEVANCIA}      relevancia
+${PROJETORELEVANCIA}        ${TEXTO}
+
+${IDPROJETOINOVASELECT}     tipo_inovacao
+${PROJETOINOVASELECT}       Processo
+
+${IDPROJINOVAGRAUSELECT}    grau_inovacao
+${PROJINOVAGRAUSELECT}      Radical
+
+${IDPROJETOMETODOLOGIA}     metodologia
+${PROJETOMETODOLOGIA}       ${TEXTO}
+
+${IDPROJETOIMPACTO}         impactos
+${PROJETOIMPACTO}           ${TEXTO}
+
+${NAMEPROJETOVIABITEC}      visibilidade_tecnica
+${PROJETOVIABITEC}          ${TEXTO}
+
+${NAMEPROJETOVIABIECO}      visibilidade_economica
+${PROJETOVIABIECO}          ${TEXTO}
+
+${IDPROJETORECURSOST}       recursosTerceiros
+${PROJETORECURSOST}         1
+
+${IDPROJETORECURSOSP}       recursosProprios
+${PROJETORECURSOSP}         1
+
+${NAMEPROJETODESAFIOSP}     desafio_bolsistas
+${PROJETODESAFIOSP}         ${TEXTO}
+
+${XPATHPROJETOANALISE}      //form/div/div[7]/div[1]/div[1]/label[@for="analise_iel_sim"]
+
+${NAMEPROJREGIONALSELECT}   regional_iel
+${PROJREGIONALSELECT}       Alagoas - ( AL )
+
+
+&{DADOSPROJETO}    ${IDPROJETOCARGO}=${PROJETOCARGO}  ${IDPROJETOLATTES}=${PROJETOLATTES}
+...                ${IDPROJETOHORASSEM}=${PROJETOHORASSEM}  ${IDPROJETORESP}=${PROJETORESP}
+...                ${IDPROJETOTITULO}=${PROJETOTITULO}  ${IDPROJETOPCHAVES}=${PROJETOPCHAVES}
+...                ${IDPROJETOOBJETIVO}=${PROJETOOBJETIVO}  ${IDPROJETORELEVANCIA}=${PROJETORELEVANCIA}
+...                ${IDPROJETOMETODOLOGIA}=${PROJETOMETODOLOGIA}  ${IDPROJETOIMPACTO}=${PROJETOIMPACTO}
+...                ${NAMEPROJETOVIABITEC}=${PROJETOVIABITEC}  ${NAMEPROJETOVIABIECO}=${PROJETOVIABIECO}
+...                ${IDPROJETORECURSOST}=${PROJETORECURSOST}  ${IDPROJETORECURSOSP}=${PROJETORECURSOSP}
+...                ${NAMEPROJETODESAFIOSP}=${PROJETODESAFIOSP}
+
+&{DADOSPROJETOSELECT}    ${IDPROJETOSETORSELECT}=${PROJETOSETORSELECT}
+...                      ${IDPROJETOINOVASELECT}=${PROJETOINOVASELECT}
+...                      ${IDPROJINOVAGRAUSELECT}=${PROJINOVAGRAUSELECT}
+...                      ${NAMEPROJREGIONALSELECT}=${PROJREGIONALSELECT}
+
+${XPATHENVIARPROJETO}       //form/div/button[@class="pp-btn pp-enabled"]

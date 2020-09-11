@@ -29,8 +29,7 @@ Então é encerrada a sessão
     Click Link    xpath=${XPATHLOGOUT}
 
 
-# Cenário 01 Cadastro: Cadastrar um novo usuário com sucesso
-
+# Cenário 01 Cadastro Usuário: Cadastrar um novo usuário com sucesso
 
 Dado que esteja na tela inicial do site InovaForms
     Wait Until Page Contains Element    tag=title
@@ -53,8 +52,7 @@ Então será redirecionado para a página de login novamente
     Page Should Contain Element    xpath=${XPATHLOGIN}
 
 
-# Cenário 02 Cadastro: Falhar cadastro de um novo usuário com sucesso
-
+# Cenário 02 Cadastro Usuário: Falhar cadastro de um novo usuário com sucesso
 
 E ao preencher os campos incorretamente e clicar em enviar
 	Preencher campos de texto    campos=${DADOSCADASTROERRADOS}
@@ -64,3 +62,18 @@ E ao preencher os campos incorretamente e clicar em enviar
 Então serão exibidas "${erros}" mensagens de erro
     ${errosgerados}    Get Element Count    class=${CLASSEERRO}
     Should Be Equal As Integers    ${erros}    ${errosgerados}
+
+
+# Cenário 01 Cadastro: Serão preenchidos os campos do projeto para o cadastro
+
+Dado que esteja na tela de criação de projetos
+    Page Should Contain    ${TEXTOPAGINAPROJETO}
+
+Quando clicar em adicionar projeto
+    Click Element    xpath=${XPATHADICIONARPROJETO}
+
+Então serão exibidos e preenchidos os campos para descrever o projeto
+    Wait Until Page Contains    ${TEXTONOVOPROJETO}
+	Preencher campos de texto    campos=${DADOSPROJETO}
+    Click Element    ${XPATHPROJETOANALISE}
+	Preencher campos de select    campos=${DADOSPROJETOSELECT}

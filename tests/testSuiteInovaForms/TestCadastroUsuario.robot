@@ -8,7 +8,7 @@ Test TEARDOWN     Fechar navegador
 
 *** Test Cases ***
 
-Cenário 01 Cadastro: Cadastrar um novo usuário com sucesso
+Cenário 01 Cadastro Usuário: Cadastrar um novo usuário com sucesso
     [Documentation]    Será feito o cadastro do usuário
 ...	                   utilizando informações corretas ao sistema
     [Tags]    Cadastro
@@ -22,7 +22,7 @@ Cenário 01 Cadastro: Cadastrar um novo usuário com sucesso
 	Então será redirecionado para a página de login novamente
 
 
-Cenário 02 Cadastro: Falhar cadastro de um novo usuário com sucesso
+Cenário 02 Cadastro Usuário: Falhar cadastro de um novo usuário com sucesso
 	[Documentation]    Será feito o preenchimento do formulário de cadastro
 ...	                   preenchendo todos os campos de forma inválida
     [Tags]    Cadastro
