@@ -36,6 +36,14 @@ Preencher radiobutton
 	    Select Radio Button    ${id}    ${radio}
 	END
 
+Muitos cliques seguidos
+    [Arguments]    ${campos}
+	FOR    ${id}    IN    @{campos}
+	    Scroll Element Into View    ${id}
+		Click Element    ${id}
+	END
+
+
 #Cria Dicionário
 
 Atualiza dicionário

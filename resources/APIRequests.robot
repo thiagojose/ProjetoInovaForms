@@ -7,8 +7,9 @@ Library    Collections
 *** Variables ***
 
 # Dados gerais do projeto
-${APITOKEN}     AioAuth OWRkNGU3OTktODZmZC00Y2M4LTgzZDEtOTFkMmNjYjkwNjE4
-${IDPROJETO}    LN
+${APITOKEN}     AioAuth xxxxxxxxxxZmRh
+
+${IDPROJETO}    ITIEL
 ${IDCICLO}      placeholder
 
 ${APPPSTEARDOWNRESULTS}    resultsimports

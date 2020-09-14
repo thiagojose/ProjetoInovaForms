@@ -72,11 +72,15 @@ Dado que esteja na tela de criação de projetos
 Quando clicar em adicionar projeto
     Click Element    xpath=${XPATHADICIONARPROJETO}
 
-Então serão exibidos e preenchidos os campos para descrever o projeto
+Dado que esteja adicionando um novo projeto
     Wait Until Page Contains    ${TEXTONOVOPROJETO}
+
+Então serão exibidos e preenchidos os campos para descrever o projeto
+    Dado que esteja adicionando um novo projeto
 	Preencher campos de texto    campos=${DADOSPROJETO}
     Click Element    ${XPATHPROJETOANALISE}
 	Preencher campos de select    campos=${DADOSPROJETOSELECT}
+	Muitos cliques seguidos    campos=${DADOSPROJETOCLIQUES}
 
 # Cenário 02 Cadastro Projeto: Incluir dados da Empresa
 
@@ -99,7 +103,7 @@ Então será exibido o formulário para incluir os dados da empresa
 ...                        novachave=${NAMEEMPRESAINSCM}    valorchave=${randomcnpj}
     Atualiza dicionário    dicio=${DADOSEMPRESA}    chave=${NAMEEMPRESAINSCES}
 ...                        novachave=${NAMEEMPRESAINSCES}    valorchave=${randomcnpj}
-    Preencher campos de texto    campos=${DADOSEMPRESA}
+    Preencher campos de texto     campos=${DADOSEMPRESA}
 	Preencher campos de select    campos=${DADOSEMPRESASELECT}
 	Click Element    xpath=${XPATHEMPFILIAISOPEN}
 	Click Element    xpath=${XPATHEMPRFILIAISCHECK}
@@ -109,5 +113,120 @@ Então será exibido o formulário para incluir os dados da empresa
 E ao clicar em "Incluir dados da empresa"
     Click Element    ${XPATHADICIONAREMPRESA}
 
-Então esta será incluída no formulário de cadastro geral
+Então a empresa será incluída no formulário de cadastro geral
     Page Should Contain    ${TEXTO}
+
+
+#Cenário 03 Cadastro Projeto: Incluir Histórico
+
+Quando clicar em Incluir Histórico
+	Scroll Element Into View    ${XPATHICLUIRHISTORICO}
+	Mouse Over       ${XPATHICLUIRHISTORICO}
+	Click Element    xpath=${XPATHICLUIRHISTORICO}
+
+Então será exibido a tela de inclusão de histórico
+    Page Should Contain Element    ${IDHISTTITULO}
+
+E ao preenchê-lo e clicar em "Incluir Histórico"
+    Preencher campos de texto    campos=${DADOSHISTORICO}
+	Click Element    ${XPATHADICIONARHISTORICO}
+
+Então o histórico será incluído no formulário de cadastro geral
+    Wait Until Page Does Not Contain Element    ${XPATHADICIONARHISTORICO}
+    Page Should Contain Element    ${XPATHHISTORICOADICIONADO}
+
+
+# Cenário 04 Cadastro Projeto: Incluir Objetivo, Meta e Indicador
+
+Quando clicar em Incluir Objetivo, Meta e Indicador
+	Scroll Element Into View    ${XPATHABRIROBJMETAIND}
+	Mouse Over       ${XPATHABRIROBJMETAIND}
+	Click Element    xpath=${XPATHABRIROBJMETAIND}
+
+Então será exibido a tela de inclusão de Objetivo, Meta e Indicador
+	Page Should Contain Element    ${XPATHOBJMETAINDOBJETIVO}
+
+E ao preenchê-lo e clicar em "Adicionar"
+    Preencher campos de texto    campos=${DADOSOBJMETAIND}
+    Click Element    ${XPATHADICIONAROBJMETAIND}
+
+Então "Objetivo, Meta e Indicador" será incluído no formulário de cadastro geral
+    Wait Until Page Does Not Contain Element    ${XPATHADICIONAROBJMETAIND}
+    Page Should Contain Element    ${XPATHOBJMETAINDADICIONADO}
+
+# Cenário 05 Cadastro Projeto: Adicionar Executor
+
+Quando clicar em Adicionar Executor
+	Scroll Element Into View    ${XPATHINCLUIREXECUTOR}
+	Mouse Over       ${XPATHINCLUIREXECUTOR}
+	Click Element    xpath=${XPATHINCLUIREXECUTOR}
+
+Então será exibido a tela de inclusão de Executor
+    Page Should Contain Element    ${XPATHEXECUTORNOME}
+
+E ao preenchê-lo e clicar em "Adicionar Executor"
+    ${cpfaleatorio}    Generate Random String    length=11    chars=[NUMBERS]
+    Atualiza dicionário    ${DADOSEXECUTOR}    ${XPATHEXECUTORCPF}
+...                        ${XPATHEXECUTORCPF}    ${cpfaleatorio}
+    Preencher campos de texto    campos=${DADOSEXECUTOR}
+	Preencher campos de select    campos=${DADOSEXECUTORSELECT}
+    Click Element    ${XPATHADICIONAREXECUTOR}
+
+Então "Executor" será incluído no formulário de cadastro geral
+    Wait Until Page Does Not Contain Element    ${XPATHADICIONAREXECUTOR}
+	Page Should Contain Element    ${XPATHEXECUTORADICIONADO}
+
+
+# Cenário 06 Cadastro Projeto: Adicionar Perfil de Bolsista
+
+Quando clicar em "Incluir" Perfil de bolsista
+	Scroll Element Into View    ${XPATHINCLUIRPBOLSISTA}
+	Mouse Over       ${XPATHINCLUIRPBOLSISTA}
+	Click Element    xpath=${XPATHINCLUIRPBOLSISTA}
+
+Então será exibido a tela de inclusão Perfil de bolsista
+    Page Should Contain Element    ${XPATHPBOLSISTAMODALIDADE}
+
+E ao preenchê-lo e clicar em "Incluir macro ação"
+    Preencher campos de select    campos=${DADOSPERFILBOLSISTASELECT}
+	Preencher campos de texto    campos=${DADOSPERFILBOLSISTA}
+    Click Element    ${XPATHPBOLSISTAINCLUIRRMACROACAO}
+
+Então será preenchido o formulário de criação de macro ação
+    Input Text    ${XPATHMACROACAONOOME}    ${MACROACAONOOME}
+	Select From List By Label    ${XPATHMACROACAOANOSELECT}    ${MACROACAOANOSELECT}
+	Click Element    ${XPATHMACROACAOMESCHECK}
+
+
+E ao clicar em adicionar macro ação
+    Click Element    ${XPATHADICIONARMACROACAO}
+	Wait Until Page Does Not Contain Element    ${XPATHADICIONARMACROACAO}
+	Page Should Contain Element    ${XPATHMACROACAOADICIONADA}
+
+E ao clicar em "Adicionar Perfil de bolsista"
+    Click Element    ${XPATHADICIONARPBOLSISTA}
+
+Então "Perfil de bolsista" será incluído no formulário de cadastro geral
+    Wait Until Page Does Not Contain Element    ${XPATHADICIONARPBOLSISTA}
+	Page Should Contain Element    ${XPATHPBOLSISTAADICIONADO}
+
+
+# Cenário 07 Cadastro Projeto: Adicionar Macro ação geral
+
+Quando clicar em "Incluir" Macro ação
+    Scroll Element Into View    ${XPATHINCLUIRMACROACAOGERAL}
+    Click Element    ${XPATHINCLUIRMACROACAOGERAL}
+
+Então será exibido a tela de inclusão de macro ação
+    Então será preenchido o formulário de criação de macro ação
+
+E ao preenchê-la e clicar em "Incluir macro ação"
+    E ao clicar em adicionar macro ação
+
+Então a macro ação será adicionada ao formulário geral
+    Scroll Element Into View    ${XPATHINCLUIRMACROACAOGERAL}
+
+E o formulário geral será enviado
+    Click Element    ${XPATHENVIARPROJETO}
+	Wait Until Page Does Not Contain Element    ${XPATHENVIARPROJETO}
+	Page Should Contain Element    xpath=${XPATHPROJETOADICIONADO}

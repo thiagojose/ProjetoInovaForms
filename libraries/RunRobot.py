@@ -4,7 +4,7 @@ import subprocess
 COMANDO_BASE = 'robot'
 
 # scuffed auto import, tem que ver isso depois
-PROJ_TEARDOWN = 'tests\\appsTeardown.robot'
+PROJ_TEARDOWN = 'tests\\suitesTeardown.robot'
 IMPORTS_DIR = '-d results\\resultsimports'
 
 # opções de navegador da selenium e o browser padrão a ser utilizado
@@ -81,7 +81,7 @@ def encapsulaComandos():
 if __name__ == '__main__':
     execute = encapsulaComandos()
     try:
-        subprocess.run(execute)
-#        subprocess.run(f'{COMANDO_BASE} {IMPORTS_DIR} {PROJ_TEARDOWN}')
+#        subprocess.run(execute)
+        subprocess.run(f'{COMANDO_BASE} {IMPORTS_DIR} {PROJ_TEARDOWN}')
     except Exception as e:
         print(f'Erro no comando "{execute}", exceção é:{e}')

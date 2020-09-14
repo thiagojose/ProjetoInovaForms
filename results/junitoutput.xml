@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestCadastroProjeto" tests="2" errors="0" failures="0" skipped="0" time="15.867">
-<testcase classname="TestCadastroProjeto" name="Cenário 01 Cadastro Projeto: Serão preenchidos os campos do projeto para o cadastro" time="11.248">
+<testsuite name="TestCadastroProjeto" tests="7" errors="0" failures="0" skipped="0" time="34.565">
+<testcase classname="TestCadastroProjeto" name="Cenário 01 Cadastro Projeto: Serão preenchidos os campos do projeto para o cadastro" time="16.825">
 </testcase>
-<testcase classname="TestCadastroProjeto" name="Cenário 02 Cadastro Projeto: Incluir dados da Empresa" time="4.162">
+<testcase classname="TestCadastroProjeto" name="Cenário 02 Cadastro Projeto: Incluir dados da Empresa" time="4.736">
+</testcase>
+<testcase classname="TestCadastroProjeto" name="Cenário 03 Cadastro Projeto: Incluir Histórico" time="2.249">
+</testcase>
+<testcase classname="TestCadastroProjeto" name="Cenário 04 Cadastro Projeto: Incluir Objetivo, Meta e Indicador" time="1.765">
+</testcase>
+<testcase classname="TestCadastroProjeto" name="Cenário 05 Cadastro Projeto: Adicionar Executor" time="2.609">
+</testcase>
+<testcase classname="TestCadastroProjeto" name="Cenário 06 Cadastro Projeto: Adicionar Perfil de Bolsista" time="3.145">
+</testcase>
+<testcase classname="TestCadastroProjeto" name="Cenário 07 Cadastro Projeto: Adicionar Macro ação geral" time="2.770">
 </testcase>
 </testsuite>
