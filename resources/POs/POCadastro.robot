@@ -7,7 +7,7 @@ ${IDTELEFONE}       telefone
 ${TELEFONE}         3112344321
 
 ${IDCPF}            cpf
-${CPF}              11111111111
+${CPF}              ${CPF_ESTATICO}
 
 ${NAMESENHA1}       password1
 ${SENHA1}           ${SENHA}

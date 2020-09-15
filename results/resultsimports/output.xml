@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200914 15:43:05.076" rpa="false">
+<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200915 15:19:23.619" rpa="false">
 <suite id="s1" name="suitesTeardown" source="C:\Users\Pichau\Desktop\ProjetoInovaForms\tests\suitesTeardown.robot">
 <test id="s1-t1" name="Cenário 00: Raliza os imports">
 <kw name="Envia os resultados para o Jira" library="SetupsTeardowns">
@@ -12,10 +12,10 @@
 <arg>headers=${HEADERS}</arg>
 <arg>verify=True</arg>
 </arguments>
-<msg timestamp="20200914 15:43:05.246" level="INFO">Creating Session using : alias=EnvioXml, url=https://tcms.aioreports.com/aio-tcms, headers={'Authorization': 'AioAuth xxxxxxxxxxZmRh', 'accept': 'application/json;charset=utf-8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
-<status status="PASS" starttime="20200914 15:43:05.245" endtime="20200914 15:43:05.246"></status>
+<msg timestamp="20200915 15:19:23.796" level="INFO">Creating Session using : alias=EnvioXml, url=https://tcms.aioreports.com/aio-tcms, headers={'Authorization': 'AioAuth YjI0MzUwM2QtMzAzZS00YmMxLTllZTUtM2U5ZTI1Yzc4NjM5', 'accept': 'application/json;charset=utf-8'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20200915 15:19:23.795" endtime="20200915 15:19:23.796"></status>
 </kw>
-<status status="PASS" starttime="20200914 15:43:05.245" endtime="20200914 15:43:05.246"></status>
+<status status="PASS" starttime="20200915 15:19:23.795" endtime="20200915 15:19:23.797"></status>
 </kw>
 <kw name="Cria um novo ciclo e envia os cenários como casos de teste" library="APIRequests">
 <kw name="Get Current Date" library="DateTime">
@@ -27,8 +27,8 @@
 <assign>
 <var>${hoje}</var>
 </assign>
-<msg timestamp="20200914 15:43:05.247" level="INFO">${hoje} = 2020-09-15</msg>
-<status status="PASS" starttime="20200914 15:43:05.247" endtime="20200914 15:43:05.247"></status>
+<msg timestamp="20200915 15:19:23.798" level="INFO">${hoje} = 2020-09-16</msg>
+<status status="PASS" starttime="20200915 15:19:23.797" endtime="20200915 15:19:23.798"></status>
 </kw>
 <kw name="Get Current Date" library="DateTime">
 <doc>Returns current local or UTC time with an optional increment.</doc>
@@ -38,8 +38,8 @@
 <assign>
 <var>${agora}</var>
 </assign>
-<msg timestamp="20200914 15:43:05.247" level="INFO">${agora} = 14-09-2020 às 15:43</msg>
-<status status="PASS" starttime="20200914 15:43:05.247" endtime="20200914 15:43:05.247"></status>
+<msg timestamp="20200915 15:19:23.798" level="INFO">${agora} = 15-09-2020 às 15:19</msg>
+<status status="PASS" starttime="20200915 15:19:23.798" endtime="20200915 15:19:23.798"></status>
 </kw>
 <kw name="Replace String" library="String">
 <doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
@@ -51,8 +51,8 @@
 <assign>
 <var>${resultadopastatestes}</var>
 </assign>
-<msg timestamp="20200914 15:43:05.248" level="INFO">${resultadopastatestes} = C:\Users\Pichau\Desktop\ProjetoInovaForms\results</msg>
-<status status="PASS" starttime="20200914 15:43:05.247" endtime="20200914 15:43:05.248"></status>
+<msg timestamp="20200915 15:19:23.798" level="INFO">${resultadopastatestes} = C:\Users\Pichau\Desktop\ProjetoInovaForms\results</msg>
+<status status="PASS" starttime="20200915 15:19:23.798" endtime="20200915 15:19:23.798"></status>
 </kw>
 <kw name="Replace String" library="String">
 <doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
@@ -64,8 +64,8 @@
 <assign>
 <var>${resultadopastatestes}</var>
 </assign>
-<msg timestamp="20200914 15:43:05.248" level="INFO">${resultadopastatestes} = C:\\Users\\Pichau\\Desktop\\ProjetoInovaForms\\results</msg>
-<status status="PASS" starttime="20200914 15:43:05.248" endtime="20200914 15:43:05.248"></status>
+<msg timestamp="20200915 15:19:23.799" level="INFO">${resultadopastatestes} = C:\\Users\\Pichau\\Desktop\\ProjetoInovaForms\\results</msg>
+<status status="PASS" starttime="20200915 15:19:23.798" endtime="20200915 15:19:23.799"></status>
 </kw>
 <kw name="Format String" library="String">
 <doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
@@ -79,12 +79,12 @@
 <assign>
 <var>${ciclobody}</var>
 </assign>
-<msg timestamp="20200914 15:43:05.249" level="INFO" html="yes">Reading template from file &lt;a href="C:\Users\Pichau\Desktop\ProjetoInovaForms\resources\variables\newcyclesimp.json"&gt;C:\Users\Pichau\Desktop\ProjetoInovaForms\resources\variables\newcyclesimp.json&lt;/a&gt;.</msg>
-<msg timestamp="20200914 15:43:05.249" level="INFO">${ciclobody} = {
-  "title": "Execução realizada em 14-09-2020 às 15:43 para o projeto ITIEL",
+<msg timestamp="20200915 15:19:23.800" level="INFO" html="yes">Reading template from file &lt;a href="C:\Users\Pichau\Desktop\ProjetoInovaForms\resources\variables\newcyclesimp.json"&gt;C:\Users\Pichau\Desktop\ProjetoInovaForms\resources\variables\newcyclesimp.json&lt;/a&gt;.</msg>
+<msg timestamp="20200915 15:19:23.800" level="INFO">${ciclobody} = {
+  "title": "Execução realizada em 15-09-2020 às 15:19 para o projeto ITIEL",
   "objective": "Verificação diária, resultados estão em: C:\\Users\\Pichau\\Desktop\\ProjetoInovaForms\\results",
   "star...</msg>
-<status status="PASS" starttime="20200914 15:43:05.248" endtime="20200914 15:43:05.249"></status>
+<status status="PASS" starttime="20200915 15:19:23.799" endtime="20200915 15:19:23.800"></status>
 </kw>
 <kw name="To Json" library="RequestsLibrary">
 <doc>Convert a string to a JSON object</doc>
@@ -94,16 +94,16 @@
 <assign>
 <var>${ciclobody}</var>
 </assign>
-<msg timestamp="20200914 15:43:05.250" level="INFO">To JSON using : content={
-  "title": "Execução realizada em 14-09-2020 às 15:43 para o projeto ITIEL",
+<msg timestamp="20200915 15:19:23.800" level="INFO">To JSON using : content={
+  "title": "Execução realizada em 15-09-2020 às 15:19 para o projeto ITIEL",
   "objective": "Verificação diária, resultados estão em: C:\\Users\\Pichau\\Desktop\\ProjetoInovaForms\\results",
-  "startDate": "2020-09-15",
-  "endDate": "2020-09-15"
+  "startDate": "2020-09-16",
+  "endDate": "2020-09-16"
 }
  </msg>
-<msg timestamp="20200914 15:43:05.250" level="INFO">To JSON using : pretty_print=False </msg>
-<msg timestamp="20200914 15:43:05.250" level="INFO">${ciclobody} = {'title': 'Execução realizada em 14-09-2020 às 15:43 para o projeto ITIEL', 'objective': 'Verificação diária, resultados estão em: C:\\Users\\Pichau\\Desktop\\ProjetoInovaForms\\results', 'startDate':...</msg>
-<status status="PASS" starttime="20200914 15:43:05.249" endtime="20200914 15:43:05.250"></status>
+<msg timestamp="20200915 15:19:23.800" level="INFO">To JSON using : pretty_print=False </msg>
+<msg timestamp="20200915 15:19:23.800" level="INFO">${ciclobody} = {'title': 'Execução realizada em 15-09-2020 às 15:19 para o projeto ITIEL', 'objective': 'Verificação diária, resultados estão em: C:\\Users\\Pichau\\Desktop\\ProjetoInovaForms\\results', 'startDate':...</msg>
+<status status="PASS" starttime="20200915 15:19:23.800" endtime="20200915 15:19:23.801"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
@@ -113,8 +113,8 @@
 <assign>
 <var>${projectiddict}</var>
 </assign>
-<msg timestamp="20200914 15:43:05.251" level="INFO">${projectiddict} = {'jiraProjectId': 'ITIEL'}</msg>
-<status status="PASS" starttime="20200914 15:43:05.250" endtime="20200914 15:43:05.251"></status>
+<msg timestamp="20200915 15:19:23.801" level="INFO">${projectiddict} = {'jiraProjectId': 'ITIEL'}</msg>
+<status status="PASS" starttime="20200915 15:19:23.801" endtime="20200915 15:19:23.801"></status>
 </kw>
 <kw name="Post Request" library="RequestsLibrary">
 <doc>Send a POST request on the session object found using the
@@ -129,17 +129,17 @@ given `alias`</doc>
 <assign>
 <var>${postciclo}</var>
 </assign>
-<msg timestamp="20200914 15:43:05.755" level="INFO">POST Request : url=https://tcms.aioreports.com/aio-tcms/api/v1/project/ITIEL/testcycle/detail?jiraProjectId=ITIEL 
+<msg timestamp="20200915 15:19:24.384" level="INFO">POST Request : url=https://tcms.aioreports.com/aio-tcms/api/v1/project/ITIEL/testcycle/detail?jiraProjectId=ITIEL 
  path_url=/aio-tcms/api/v1/project/ITIEL/testcycle/detail?jiraProjectId=ITIEL 
- headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json;charset=utf-8', 'Connection': 'keep-alive', 'Authorization': 'AioAuth xxxxxxxxxxZmRh', 'Content-Length': '274', 'Content-Type': 'application/json'} 
- body=b'{"title": "Execu\\u00e7\\u00e3o realizada em 14-09-2020 \\u00e0s 15:43 para o projeto ITIEL", "objective": "Verifica\\u00e7\\u00e3o di\\u00e1ria, resultados est\\u00e3o em: C:\\\\Users\\\\Pichau\\\\Desktop\\\\ProjetoInovaForms\\\\results", "startDate": "2020-09-15", "endDate": "2020-09-15"}' 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json;charset=utf-8', 'Connection': 'keep-alive', 'Authorization': 'AioAuth YjI0MzUwM2QtMzAzZS00YmMxLTllZTUtM2U5ZTI1Yzc4NjM5', 'Content-Length': '274', 'Content-Type': 'application/json'} 
+ body=b'{"title": "Execu\\u00e7\\u00e3o realizada em 15-09-2020 \\u00e0s 15:19 para o projeto ITIEL", "objective": "Verifica\\u00e7\\u00e3o di\\u00e1ria, resultados est\\u00e3o em: C:\\\\Users\\\\Pichau\\\\Desktop\\\\ProjetoInovaForms\\\\results", "startDate": "2020-09-16", "endDate": "2020-09-16"}' 
  </msg>
-<msg timestamp="20200914 15:43:05.755" level="INFO">POST Response : url=https://tcms.aioreports.com/aio-tcms/api/v1/project/ITIEL/testcycle/detail?jiraProjectId=ITIEL 
- status=401, reason= 
- body=Invalid or missing API Token. 
+<msg timestamp="20200915 15:19:24.384" level="INFO">POST Response : url=https://tcms.aioreports.com/aio-tcms/api/v1/project/ITIEL/testcycle/detail?jiraProjectId=ITIEL 
+ status=200, reason= 
+ body={"ID":519,"key":"ITIEL-CY-14","title":"Execução realizada em 15-09-2020 às 15:19 para o projeto ITIEL","objective":"Verificação diária, resultados estão em: C:\\Users\\Pichau\\Desktop\\ProjetoInovaForms\\results","ownedByID":"5f3d363a42959b00398b53d3","folder":null,"jiraComponentID":null,"jiraReleaseID":null,"startDate":1600214400000,"endDate":1600214400000,"isSystemDefined":false,"tags":null} 
  </msg>
-<msg timestamp="20200914 15:43:05.755" level="INFO">${postciclo} = &lt;Response [401]&gt;</msg>
-<status status="PASS" starttime="20200914 15:43:05.251" endtime="20200914 15:43:05.755"></status>
+<msg timestamp="20200915 15:19:24.385" level="INFO">${postciclo} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20200915 15:19:23.801" endtime="20200915 15:19:24.385"></status>
 </kw>
 <kw name="To Json" library="RequestsLibrary">
 <doc>Convert a string to a JSON object</doc>
@@ -149,27 +149,106 @@ given `alias`</doc>
 <assign>
 <var>${ciclocriado}</var>
 </assign>
-<msg timestamp="20200914 15:43:05.757" level="FAIL">JSONDecodeError: Expecting value: line 1 column 1 (char 0)</msg>
-<status status="FAIL" starttime="20200914 15:43:05.755" endtime="20200914 15:43:05.757"></status>
+<msg timestamp="20200915 15:19:24.385" level="INFO">To JSON using : content={"ID":519,"key":"ITIEL-CY-14","title":"Execução realizada em 15-09-2020 às 15:19 para o projeto ITIEL","objective":"Verificação diária, resultados estão em: C:\\Users\\Pichau\\Desktop\\ProjetoInovaForms\\results","ownedByID":"5f3d363a42959b00398b53d3","folder":null,"jiraComponentID":null,"jiraReleaseID":null,"startDate":1600214400000,"endDate":1600214400000,"isSystemDefined":false,"tags":null} </msg>
+<msg timestamp="20200915 15:19:24.385" level="INFO">To JSON using : pretty_print=False </msg>
+<msg timestamp="20200915 15:19:24.385" level="INFO">${ciclocriado} = {'ID': 519, 'key': 'ITIEL-CY-14', 'title': 'Execução realizada em 15-09-2020 às 15:19 para o projeto ITIEL', 'objective': 'Verificação diária, resultados estão em: C:\\Users\\Pichau\\Desktop\\ProjetoI...</msg>
+<status status="PASS" starttime="20200915 15:19:24.385" endtime="20200915 15:19:24.385"></status>
 </kw>
-<status status="FAIL" starttime="20200914 15:43:05.246" endtime="20200914 15:43:05.758"></status>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${IDCICLO}</arg>
+<arg>${ciclocriado}[key]</arg>
+</arguments>
+<msg timestamp="20200915 15:19:24.386" level="INFO">${IDCICLO} = ITIEL-CY-14</msg>
+<status status="PASS" starttime="20200915 15:19:24.385" endtime="20200915 15:19:24.386"></status>
 </kw>
-<status status="FAIL" starttime="20200914 15:43:05.245" endtime="20200914 15:43:05.758"></status>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${CASEURI}</arg>
+<arg>/api/v1/project/${IDPROJETO}/testcycle/${IDCICLO}/import/results</arg>
+</arguments>
+<msg timestamp="20200915 15:19:24.386" level="INFO">${CASEURI} = /api/v1/project/ITIEL/testcycle/ITIEL-CY-14/import/results</msg>
+<status status="PASS" starttime="20200915 15:19:24.386" endtime="20200915 15:19:24.386"></status>
 </kw>
-<status status="FAIL" starttime="20200914 15:43:05.244" endtime="20200914 15:43:05.759" critical="yes">JSONDecodeError: Expecting value: line 1 column 1 (char 0)</status>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${CASOBODY}</arg>
+<arg>testCycleId</arg>
+<arg>${IDCICLO}</arg>
+</arguments>
+<status status="PASS" starttime="20200915 15:19:24.387" endtime="20200915 15:19:24.387"></status>
+</kw>
+<kw name="Get File For Streaming Upload" library="RequestsLibrary">
+<doc>Opens and returns a file descriptor of a specified file to be passed as ``data`` parameter
+to other requests keywords.</doc>
+<arguments>
+<arg>${LOCALRESULTADO}</arg>
+</arguments>
+<assign>
+<var>${xmlfile}</var>
+</assign>
+<msg timestamp="20200915 15:19:24.388" level="INFO">${xmlfile} = &lt;_io.BufferedReader name='C:\\Users\\Pichau\\Desktop\\ProjetoInovaForms\\resources\\..\\results\\junitoutput.xml'&gt;</msg>
+<status status="PASS" starttime="20200915 15:19:24.387" endtime="20200915 15:19:24.388"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>file=${xmlfile}</arg>
+<arg>type=text/xml</arg>
+</arguments>
+<assign>
+<var>${arquivo}</var>
+</assign>
+<msg timestamp="20200915 15:19:24.388" level="INFO">${arquivo} = {'file': &lt;_io.BufferedReader name='C:\\Users\\Pichau\\Desktop\\ProjetoInovaForms\\resources\\..\\results\\junitoutput.xml'&gt;, 'type': 'text/xml'}</msg>
+<status status="PASS" starttime="20200915 15:19:24.388" endtime="20200915 15:19:24.388"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>alias=${APIALIAS}</arg>
+<arg>uri=${CASEURI}</arg>
+<arg>headers=${HEADERS}</arg>
+<arg>data=${CASOBODY}</arg>
+<arg>files=${arquivo}</arg>
+<arg>params=${TYPE}</arg>
+</arguments>
+<assign>
+<var>${postcaso}</var>
+</assign>
+<msg timestamp="20200915 15:19:24.857" level="INFO">POST Request : url=https://tcms.aioreports.com/aio-tcms/api/v1/project/ITIEL/testcycle/ITIEL-CY-14/import/results?type=JUnit 
+ path_url=/aio-tcms/api/v1/project/ITIEL/testcycle/ITIEL-CY-14/import/results?type=JUnit 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json;charset=utf-8', 'Connection': 'keep-alive', 'Authorization': 'AioAuth YjI0MzUwM2QtMzAzZS00YmMxLTllZTUtM2U5ZTI1Yzc4NjM5', 'Cookie': 'JSESSIONID=s2~6C099B13C42B24E4A55E5670B76915D5', 'Content-Length': '2522', 'Content-Type': 'multipart/form-data; boundary=f4a010e38616c992e765d3f43b169d5b'} 
+ body=b'--f4a010e38616c992e765d3f43b169d5b\r\nContent-Disposition: form-data; name="createNewRun"\r\n\r\ntrue\r\n--f4a010e38616c992e765d3f43b169d5b\r\nContent-Disposition: form-data; name="addCaseToCycle"\r\n\r\ntrue\r\n--f4a010e38616c992e765d3f43b169d5b\r\nContent-Disposition: form-data; name="jiraProjectId"\r\n\r\nITIEL\r\n--f4a010e38616c992e765d3f43b169d5b\r\nContent-Disposition: form-data; name="testCycleId"\r\n\r\nITIEL-CY-14\r\n--f4a010e38616c992e765d3f43b169d5b\r\nContent-Disposition: form-data; name="createCase"\r\n\r\ntrue\r\n--f4a010e38616c992e765d3f43b169d5b\r\nContent-Disposition: form-data; name="file"\r\n\r\nC:\\Users\\Pichau\\Desktop\\ProjetoInovaForms\\resources\\..\\results\\junitoutput.xml\r\n--f4a010e38616c992e765d3f43b169d5b\r\nContent-Disposition: form-data; name="file"; filename="junitoutput.xml"\r\n\r\n&lt;?xml version="1.0" encoding="UTF-8"?&gt;\r\n&lt;testsuite name="testSuiteInovaForms" tests="9" errors="0" failures="0" skipped="0" time="65.728"&gt;\r\n&lt;testcase classname="testSuiteInovaForms.TestCadastrodeUsuario" name="Cen\xc3\xa1rio 01 Cadastro Usu\xc3\xa1rio: Cadastrar um novo usu\xc3\xa1rio com sucesso" time="12.851"&gt;\r\n&lt;/testcase&gt;\r\n&lt;testcase classname="testSuiteInovaForms.TestCadastrodeUsuario" name="Cen\xc3\xa1rio 02 Cadastro Usu\xc3\xa1rio: Falhar cadastro de um novo usu\xc3\xa1rio com sucesso" time="12.295"&gt;\r\n&lt;/testcase&gt;\r\n&lt;testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cen\xc3\xa1rio 01 Cadastro Projeto: Ser\xc3\xa3o preenchidos os campos do projeto para o cadastro" time="19.002"&gt;\r\n&lt;/testcase&gt;\r\n&lt;testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cen\xc3\xa1rio 02 Cadastro Projeto: Incluir dados da Empresa" time="4.988"&gt;\r\n&lt;/testcase&gt;\r\n&lt;testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cen\xc3\xa1rio 03 Cadastro Projeto: Incluir Hist\xc3\xb3rico" time="2.371"&gt;\r\n&lt;/testcase&gt;\r\n&lt;testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cen\xc3\xa1rio 04 Cadastro Projeto: Incluir Objetivo, Meta e Indicador" time="1.847"&gt;\r\n&lt;/testcase&gt;\r\n&lt;testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cen\xc3\xa1rio 05 Cadastro Projeto: Adicionar Executor" time="2.381"&gt;\r\n&lt;/testcase&gt;\r\n&lt;testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cen\xc3\xa1rio 06 Cadastro Projeto: Adicionar Perfil de Bolsista" time="3.511"&gt;\r\n&lt;/testcase&gt;\r\n&lt;testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cen\xc3\xa1rio 07 Cadastro Projeto: Adicionar Macro a\xc3\xa7\xc3\xa3o geral" time="5.946"&gt;\r\n&lt;/testcase&gt;\r\n&lt;/testsuite&gt;\r\n\r\n--f4a010e38616c992e765d3f43b169d5b\r\nContent-Disposition: form-data; name="type"; filename="type"\r\n\r\ntext/xml\r\n--f4a010e38616c992e765d3f43b169d5b--\r\n' 
+ </msg>
+<msg timestamp="20200915 15:19:24.857" level="INFO">POST Response : url=https://tcms.aioreports.com/aio-tcms/api/v1/project/ITIEL/testcycle/ITIEL-CY-14/import/results?type=JUnit 
+ status=200, reason= 
+ body={"status":"SUCCESS","requestCount":9,"successCount":9,"errorCount":0,"errors":null,"processedData":{"testSuiteInovaForms.TestCadastrodeUsuario.Cenário 01 Cadastro Usuário: Cadastrar um novo usuário com sucesso":{"tcKey":"testSuiteInovaForms.TestCadastrodeUsuario.Cenário 01 Cadastro Usuário: Cadastrar um novo usuário com sucesso","className":"testSuiteInovaForms.TestCadastrodeUsuario","name":"Cenário 01 Cadastro Usuário: Cadastrar um novo usuário com sucesso","status":"Passed","duration":12,"finishedAt":null,"runId":[null,5705],"comments":[]},"testSuiteInovaForms.TestCadastrodeUsuario.Cenário 02 Cadastro Usuário: Falhar cadastro de um novo usuário com sucesso":{"tcKey":"testSuiteInovaForms.TestCadastrodeUsuario.Cenário 02 Cadastro Usuário: Falhar cadastro de um novo usuário com sucesso","className":"testSuiteInovaForms.TestCadastrodeUsuario","name":"Cenário 02 Cadastro Usuário: Falhar cadastro de um novo usuário com sucesso","status":"Passed","duration":12,"finishedAt":null,"runId":[null,5706],"comments":[]},"testSuiteInovaForms.TestCadastroProjeto.Cenário 01 Cadastro Projeto: Serão preenchidos os campos do projeto para o cadastro":{"tcKey":"testSuiteInovaForms.TestCadastroProjeto.Cenário 01 Cadastro Projeto: Serão preenchidos os campos do projeto para o cadastro","className":"testSuiteInovaForms.TestCadastroProjeto","name":"Cenário 01 Cadastro Projeto: Serão preenchidos os campos do projeto para o cadastro","status":"Passed","duration":19,"finishedAt":null,"runId":[null,5707],"comments":[]},"testSuiteInovaForms.TestCadastroProjeto.Cenário 02 Cadastro Projeto: Incluir dados da Empresa":{"tcKey":"testSuiteInovaForms.TestCadastroProjeto.Cenário 02 Cadastro Projeto: Incluir dados da Empresa","className":"testSuiteInovaForms.TestCadastroProjeto","name":"Cenário 02 Cadastro Projeto: Incluir dados da Empresa","status":"Passed","duration":4,"finishedAt":null,"runId":[null,5708],"comments":[]},"testSuiteInovaForms.TestCadastroProjeto.Cenário 03 Cadastro Projeto: Incluir Histórico":{"tcKey":"testSuiteInovaForms.TestCadastroProjeto.Cenário 03 Cadastro Projeto: Incluir Histórico","className":"testSuiteInovaForms.TestCadastroProjeto","name":"Cenário 03 Cadastro Projeto: Incluir Histórico","status":"Passed","duration":2,"finishedAt":null,"runId":[null,5709],"comments":[]},"testSuiteInovaForms.TestCadastroProjeto.Cenário 04 Cadastro Projeto: Incluir Objetivo, Meta e Indicador":{"tcKey":"testSuiteInovaForms.TestCadastroProjeto.Cenário 04 Cadastro Projeto: Incluir Objetivo, Meta e Indicador","className":"testSuiteInovaForms.TestCadastroProjeto","name":"Cenário 04 Cadastro Projeto: Incluir Objetivo, Meta e Indicador","status":"Passed","duration":1,"finishedAt":null,"runId":[null,5710],"comments":[]},"testSuiteInovaForms.TestCadastroProjeto.Cenário 05 Cadastro Projeto: Adicionar Executor":{"tcKey":"testSuiteInovaForms.TestCadastroProjeto.Cenário 05 Cadastro Projeto: Adicionar Executor","className":"testSuiteInovaForms.TestCadastroProjeto","name":"Cenário 05 Cadastro Projeto: Adicionar Executor","status":"Passed","duration":2,"finishedAt":null,"runId":[null,5711],"comments":[]},"testSuiteInovaForms.TestCadastroProjeto.Cenário 06 Cadastro Projeto: Adicionar Perfil de Bolsista":{"tcKey":"testSuiteInovaForms.TestCadastroProjeto.Cenário 06 Cadastro Projeto: Adicionar Perfil de Bolsista","className":"testSuiteInovaForms.TestCadastroProjeto","name":"Cenário 06 Cadastro Projeto: Adicionar Perfil de Bolsista","status":"Passed","duration":3,"finishedAt":null,"runId":[null,5712],"comments":[]},"testSuiteInovaForms.TestCadastroProjeto.Cenário 07 Cadastro Projeto: Adicionar Macro ação geral":{"tcKey":"testSuiteInovaForms.TestCadastroProjeto.Cenário 07 Cadastro Projeto: Adicionar Macro ação geral","className":"testSuiteInovaForms.TestCadastroProjeto","name":"Cenário 07 Cadastro Projeto: Adicionar Macro ação geral","status":"Passed","duration":5,"finishedAt":null,"runId":[null,5713],"comments":[]}}} 
+ </msg>
+<msg timestamp="20200915 15:19:24.857" level="INFO">${postcaso} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20200915 15:19:24.388" endtime="20200915 15:19:24.857"></status>
+</kw>
+<status status="PASS" starttime="20200915 15:19:23.797" endtime="20200915 15:19:24.857"></status>
+</kw>
+<status status="PASS" starttime="20200915 15:19:23.795" endtime="20200915 15:19:24.857"></status>
+</kw>
+<status status="PASS" starttime="20200915 15:19:23.794" endtime="20200915 15:19:24.858" critical="yes"></status>
 </test>
 <doc>Testar a funcionalidade de cadastro do site Localnews</doc>
-<status status="FAIL" starttime="20200914 15:43:05.078" endtime="20200914 15:43:05.761"></status>
+<status status="PASS" starttime="20200915 15:19:23.621" endtime="20200915 15:19:24.860"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1">Critical Tests</stat>
-<stat pass="0" fail="1">All Tests</stat>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" id="s1" name="suitesTeardown">suitesTeardown</stat>
+<stat pass="1" fail="0" id="s1" name="suitesTeardown">suitesTeardown</stat>
 </suite>
 </statistics>
 <errors>

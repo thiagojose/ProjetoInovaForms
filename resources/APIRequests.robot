@@ -7,7 +7,7 @@ Library    Collections
 *** Variables ***
 
 # Dados gerais do projeto
-${APITOKEN}     AioAuth xxxxxxxxxxZmRh
+${APITOKEN}     AioAuth YjI0MzUwM2QtMzAzZS00YmMxLTllZTUtM2U5ZTI1Yzc4NjM5
 
 ${IDPROJETO}    ITIEL
 ${IDCICLO}      placeholder
@@ -80,7 +80,7 @@ Cria um novo ciclo e envia os cenários como casos de teste
 	${projectiddict}    Create Dictionary    jiraProjectId=${IDPROJETO}
 
 ### Executa um post para criação do novo ciclo
-	${postciclo}    Post Request    alias=${APIALIAS}    uri=${CYCLEURI}
+	${postciclo}    Post Request     alias=${APIALIAS}    uri=${CYCLEURI}
 ...	                                 headers=${HEADERS}
 ...                                  params=${projectiddict}
 ...                                  json=${ciclobody}

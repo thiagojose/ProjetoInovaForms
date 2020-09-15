@@ -14,11 +14,13 @@ Fechar navegador
 
 Abrir navegador e logar
     Open Browser    ${URL}    ${BROWSER}
+	Maximize Browser Window
 	Então é efetuado o login
 
 Deslogar e fechar o navegador
     Então é encerrada a sessão
-#	Close Browser
+	Run Keyword If Test Failed    Screenshot Personalizada
+	Close Browser
 
 Setus individuais
     Faz nada

@@ -20,7 +20,7 @@ Faz nada
     Pass Execution    template
 
 Então é efetuado o login
-    Input Text    ${NAMEUSERNAME}    ${EMAIL}
+    Input Text    ${NAMEUSERNAME}    ${USERNAME}
 	Input Password    ${IDSENHA}    ${SENHA}
 	Click Element    xpath=${XPATHLOGIN}
 
@@ -43,6 +43,14 @@ Então será redirecionado para a página de cadastro "${novo_usuario}"
     Wait Until Page Contains    ${novo_usuario}
 
 E ao preencher os campos corretamente e clicar em enviar
+    ${randomcpf}    Generate Random String    length=11    chars=[NUMBERS]
+	${randomnumber}    Generate Random String    length=20    chars=[NUMBERS]
+	${randomemail}    Catenate    estatico${randomnumber}@gmail.com
+
+    Atualiza dicionário    dicio=${DADOSCADASTRO}    chave=${IDCPF}
+...                        novachave=${IDCPF}    valorchave=${randomcpf}
+    Atualiza dicionário    dicio=${DADOSCADASTRO}    chave=${NAMEEMAIL}
+...                        novachave=${NAMEEMAIL}    valorchave=${randomemail}
     Preencher campos de texto    campos=${DADOSCADASTRO}
 	Preencher senha    campos=${DADOSSENHA1}
 	Click Element    name=${NAMESUBMITCADASTRO}

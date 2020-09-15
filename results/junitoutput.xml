@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TestCadastroProjeto" tests="7" errors="0" failures="0" skipped="0" time="34.565">
-<testcase classname="TestCadastroProjeto" name="Cenário 01 Cadastro Projeto: Serão preenchidos os campos do projeto para o cadastro" time="16.825">
+<testsuite name="testSuiteInovaForms" tests="9" errors="0" failures="0" skipped="0" time="65.728">
+<testcase classname="testSuiteInovaForms.TestCadastrodeUsuario" name="Cenário 01 Cadastro Usuário: Cadastrar um novo usuário com sucesso" time="12.851">
 </testcase>
-<testcase classname="TestCadastroProjeto" name="Cenário 02 Cadastro Projeto: Incluir dados da Empresa" time="4.736">
+<testcase classname="testSuiteInovaForms.TestCadastrodeUsuario" name="Cenário 02 Cadastro Usuário: Falhar cadastro de um novo usuário com sucesso" time="12.295">
 </testcase>
-<testcase classname="TestCadastroProjeto" name="Cenário 03 Cadastro Projeto: Incluir Histórico" time="2.249">
+<testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cenário 01 Cadastro Projeto: Serão preenchidos os campos do projeto para o cadastro" time="19.002">
 </testcase>
-<testcase classname="TestCadastroProjeto" name="Cenário 04 Cadastro Projeto: Incluir Objetivo, Meta e Indicador" time="1.765">
+<testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cenário 02 Cadastro Projeto: Incluir dados da Empresa" time="4.988">
 </testcase>
-<testcase classname="TestCadastroProjeto" name="Cenário 05 Cadastro Projeto: Adicionar Executor" time="2.609">
+<testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cenário 03 Cadastro Projeto: Incluir Histórico" time="2.371">
 </testcase>
-<testcase classname="TestCadastroProjeto" name="Cenário 06 Cadastro Projeto: Adicionar Perfil de Bolsista" time="3.145">
+<testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cenário 04 Cadastro Projeto: Incluir Objetivo, Meta e Indicador" time="1.847">
 </testcase>
-<testcase classname="TestCadastroProjeto" name="Cenário 07 Cadastro Projeto: Adicionar Macro ação geral" time="2.770">
+<testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cenário 05 Cadastro Projeto: Adicionar Executor" time="2.381">
+</testcase>
+<testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cenário 06 Cadastro Projeto: Adicionar Perfil de Bolsista" time="3.511">
+</testcase>
+<testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cenário 07 Cadastro Projeto: Adicionar Macro ação geral" time="5.946">
 </testcase>
 </testsuite>

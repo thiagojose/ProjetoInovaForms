@@ -108,17 +108,23 @@ Cenário 07 Cadastro Projeto: Adicionar Macro ação geral
 	E ao preenchê-la e clicar em "Incluir macro ação"
 	Então a macro ação será adicionada ao formulário geral
     E o formulário geral será enviado
+# tem que ter um cenário pra checar pdf
+	# E ao clicar no ícone de pdf
+	# Então o pdf será aberto em uma nova aba
+    [TEARDOWN]  Deslogar e fechar o navegador
 
-# Cenário 02: O que será feito
-# 	[Documentation]    O que será feito de forma mais descritiva
-# ...	                   se julgar necessário
-#     [Tags]    Resumo do teste
+# Continuar os casos se mensagens de erro personalizadas forem implementadas no sistema
+# Cenário 08 Cadastro Projeto: Incluir dados inválidos para a Empresa
+# 	[Documentation]    Será feita a validação de máscaras
+# ...                    para a criação de empresas
+#     [Tags]    Cadastro Empresa
 #
 # ### Passos
 # 	# Descreva as chamadas de função aqui utilizando conotação Gherkin
-# 	Dado
-# 	Quando
-# 	Então
-# 	E
-# 	Mas
-# 	Então
+#  	Dado que esteja adicionando um novo projeto
+# 	Quando clicar em Incluir dados da empresa
+# 	Então será exibido a tela de seleção de empresas
+# 	E ao clicar em adicionar empresa
+# 	Então será exibido o formulário para incluir os dados da empresa
+# 	E ao preencher errado os campos e clicar em "Incluir dados da empresa"
+# 	Então deverão ser exibidas "x" mensagens de error
