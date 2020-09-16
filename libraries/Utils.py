@@ -1,5 +1,8 @@
-
-
+"""
+A ideia aqui é criar funções que facilitam o processamento de informações pelo robot
+mesmo que dê para fazer no robot, se for muito trabalhoso, basta criar uma função em python,
+inserir aqui, e importá-la para evitar código "sujo"
+"""
 
 
 def comparaStrings(s1, s2):
@@ -8,6 +11,7 @@ def comparaStrings(s1, s2):
 
 #def pegaArquivo(caminho):
 #    raise Exception(open("C:\/Users\/Pichau\/Desktop\/ProjetoLocalnews\/results\/output.xml", "rb").readlines())
+
 
 def differentPage(hre=""):
     selfpage = True if "#" in hre else False

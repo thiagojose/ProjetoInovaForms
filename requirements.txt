@@ -1,0 +1,11 @@
+robotframework
+robotframework-seleniumlibrary
+robotframework-requests==0.5.0
+
+#python3.6+
+#chromedriver
+
+#Verificar se existe o equivalente pra windows dos 2 comandos seguintes depois:
+#RUN dnf install -y chromedriver-stable >/dev/null && echo OK
+#RUN dnf install -y https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm >/dev/null && echo OK
+#ou verificar como instalar o chocolatey auto pra construir o sistema automatico
