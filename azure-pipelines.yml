@@ -33,5 +33,5 @@ steps:
   inputs:
     testResultsFiles: log.html
     searchFolder: 'D:\a\1\s\results'
-    condition: succeededOrFailed()
+  condition: succeededOrFailed()
   displayName: 'Publish Test Results log.html'
