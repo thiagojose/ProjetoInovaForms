@@ -18,6 +18,7 @@ steps:
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '$(python.version)'
+    architecture: 'x64'
   displayName: 'Use Python $(python.version)'
 
 - script: |
@@ -25,9 +26,5 @@ steps:
     pip install -r requirements.txt && npm install chromedriver
   displayName: 'Install dependencies'
 
-- script: |
-    pip install pytest pytest-azurepipelines
-    pytest
-  displayName: 'pytest'
-- powershell: python libraries/RunRobot.py headlesschrome
+- powershell: python libraries\RunRobot.py headlesschrome
   displayName: 'Run Robot Scripts'
