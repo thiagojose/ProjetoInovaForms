@@ -32,6 +32,6 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testResultsFiles: log.html
-    searchFolder: 'D:\a\1\s\results'
+    searchFolder: 'D:\a\1\s\results\'
   condition: succeededOrFailed()
   displayName: 'Publish Test Results log.html'
