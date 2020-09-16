@@ -28,3 +28,10 @@ steps:
 
 - powershell: python libraries\RunRobot.py headlesschrome
   displayName: 'Run Robot Scripts'
+
+- task: PublishTestResults@2
+  inputs:
+  testResultsFiles: log.html
+  searchFolder: 'D:\a\1\s\results'
+  condition: succeededOrFailed()
+  displayName: 'Publish Test Results log.html'
