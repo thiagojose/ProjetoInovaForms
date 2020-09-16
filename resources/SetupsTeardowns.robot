@@ -2,10 +2,16 @@
 Library    String
 Resource    APIRequests.robot
 
+*** variables ***
+
+${BROWSER}    chrome
+${OPTIONS}    add_argument("--disable-dev-shm-usage"); add_argument("--headless"); add_argument("--no-sandbox")
+
 *** Keywords ***
 
 Abrir navegador
     Open Browser    ${URL}   ${BROWSER}    alias=${BROWSER}
+#...                 options=${OPTIONS}
 	Maximize Browser Window
 
 Fechar navegador
@@ -13,7 +19,8 @@ Fechar navegador
     Close Browser
 
 Abrir navegador e logar
-    Open Browser    ${URL}    ${BROWSER}
+    Open Browser    ${URL}   ${BROWSER}    alias=${BROWSER}
+#...                 options=${OPTIONS}
 	Maximize Browser Window
 	Então é efetuado o login
 

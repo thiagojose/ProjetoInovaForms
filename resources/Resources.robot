@@ -10,7 +10,6 @@ Resource    POs/POCadastroProjeto.robot
 
 *** Variables ***
 
-${BROWSER}    chrome
 ${URL}        https://inovaforms.digitais.sistemaindustria.com.br/
 ${URL_CADASTRO}    https://inovaforms.digitais.sistemaindustria.com.br/registrar/
 
