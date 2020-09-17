@@ -42,7 +42,7 @@ APLICATIVO_DIR = '/testSuiteInovaForms'
 
 # nome do teste a ser executado, caso não seja especificado,
 # o teste executará do diretório anterior todos os testes
-NOME_TESTE = ''
+NOME_TESTE = '/TestCadastrodeUsuario.robot'
 
 
 def encapsulaComandos():
