@@ -30,12 +30,12 @@ steps:
 - powershell: python libraries\RunRobot.py headlesschrome
   displayName: 'Run Robot Scripts'
 
-- task: PublishTestResults@2
-  inputs:
-    testResultsFiles: '*'
-    searchFolder: results
-  condition: succeededOrFailed()
-  displayName: 'Publish Test Results '
+#- task: PublishTestResults@2
+#  inputs:
+#    testResultsFiles: '*'
+#    searchFolder: results
+#  condition: succeededOrFailed()
+#  displayName: 'Publish Test Results '
 
 #- download: current
 #  artifact: results
@@ -46,3 +46,16 @@ steps:
 #  inputs:
 #    patterns: results
 #    path: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Package'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'results'
+
+- download: none
+- task: DownloadPipelineArtifact@2
+  displayName: 'Download Build Artifacts'
+  inputs:
+    patterns: '**/results/*'
+    path: '$(Build.ArtifactStagingDirectory)'
