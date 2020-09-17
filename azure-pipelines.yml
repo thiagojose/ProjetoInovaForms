@@ -50,7 +50,7 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Package'
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/results'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'results'
 
 - download: none
