@@ -1,30 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testSuiteInovaForms" tests="9" errors="0" failures="9" skipped="0" time="73.871">
-<testcase classname="testSuiteInovaForms.TestCadastrodeUsuario" name="Cenário 01 Cadastro Usuário: Cadastrar um novo usuário com sucesso" time="15.984">
-<failure message="Element 'tag=title' did not appear in 5 seconds." type="AssertionError"></failure>
+<testsuite name="TestCadastroProjeto" tests="7" errors="0" failures="0" skipped="0" time="39.939">
+<testcase classname="TestCadastroProjeto" name="Cenário 01 Cadastro Projeto: Serão preenchidos os campos do projeto para o cadastro" time="19.383">
 </testcase>
-<testcase classname="testSuiteInovaForms.TestCadastrodeUsuario" name="Cenário 02 Cadastro Usuário: Falhar cadastro de um novo usuário com sucesso" time="13.183">
-<failure message="Element 'tag=title' did not appear in 5 seconds." type="AssertionError"></failure>
+<testcase classname="TestCadastroProjeto" name="Cenário 02 Cadastro Projeto: Incluir dados da Empresa" time="4.351">
 </testcase>
-<testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cenário 01 Cadastro Projeto: Serão preenchidos os campos do projeto para o cadastro" time="5.737">
-<failure message="Setup failed:&#10;Element with locator 'username' not found." type="AssertionError"></failure>
+<testcase classname="TestCadastroProjeto" name="Cenário 03 Cadastro Projeto: Incluir Histórico" time="2.234">
 </testcase>
-<testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cenário 02 Cadastro Projeto: Incluir dados da Empresa" time="5.196">
-<failure message="Text 'Novo projeto' did not appear in 5 seconds." type="AssertionError"></failure>
+<testcase classname="TestCadastroProjeto" name="Cenário 04 Cadastro Projeto: Incluir Objetivo, Meta e Indicador" time="1.751">
 </testcase>
-<testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cenário 03 Cadastro Projeto: Incluir Histórico" time="5.187">
-<failure message="Text 'Novo projeto' did not appear in 5 seconds." type="AssertionError"></failure>
+<testcase classname="TestCadastroProjeto" name="Cenário 05 Cadastro Projeto: Adicionar Executor" time="2.236">
 </testcase>
-<testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cenário 04 Cadastro Projeto: Incluir Objetivo, Meta e Indicador" time="5.012">
-<failure message="Text 'Novo projeto' did not appear in 5 seconds." type="AssertionError"></failure>
+<testcase classname="TestCadastroProjeto" name="Cenário 06 Cadastro Projeto: Adicionar Perfil de Bolsista" time="3.365">
 </testcase>
-<testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cenário 05 Cadastro Projeto: Adicionar Executor" time="5.193">
-<failure message="Text 'Novo projeto' did not appear in 5 seconds." type="AssertionError"></failure>
-</testcase>
-<testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cenário 06 Cadastro Projeto: Adicionar Perfil de Bolsista" time="5.208">
-<failure message="Text 'Novo projeto' did not appear in 5 seconds." type="AssertionError"></failure>
-</testcase>
-<testcase classname="testSuiteInovaForms.TestCadastroProjeto" name="Cenário 07 Cadastro Projeto: Adicionar Macro ação geral" time="12.632">
-<failure message="Text 'Novo projeto' did not appear in 5 seconds.&#10;&#10;Also teardown failed:&#10;Several failures occurred:&#10;&#10;1) Element 'xpath=//a[@href=&quot;/logout/&quot;]' did not appear in 5 seconds.&#10;&#10;2) Link with locator 'xpath=//a[@href=&quot;/logout/&quot;]' not found." type="AssertionError"></failure>
+<testcase classname="TestCadastroProjeto" name="Cenário 07 Cadastro Projeto: Adicionar Macro ação geral" time="6.178">
 </testcase>
 </testsuite>
