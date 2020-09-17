@@ -40,9 +40,9 @@ steps:
 - download: current
   artifact: results
 
-- task: DownloadBuildArtifacts@0
+- download: none
+- task: DownloadPipelineArtifact@2
+  displayName: 'Download Build Artifacts'
   inputs:
-    buildType: 'current'
-    downloadType: 'single'
-    artifactName: 'results'
-    downloadPath: '$(System.ArtifactsDirectory)'
+    patterns: results
+    path: '$(Build.ArtifactStagingDirectory)'
