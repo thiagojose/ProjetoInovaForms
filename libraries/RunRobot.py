@@ -42,7 +42,7 @@ APLICATIVO_DIR = '/testSuiteInovaForms'
 
 # nome do teste a ser executado, caso não seja especificado,
 # o teste executará do diretório anterior todos os testes
-NOME_TESTE = '/TestCadastrodeUsuario.robot'
+NOME_TESTE = ''
 
 
 def encapsulaComandos():
@@ -82,6 +82,6 @@ if __name__ == '__main__':
     execute = encapsulaComandos()
     try:
         subprocess.run(execute)
-#        subprocess.run(f'{COMANDO_BASE} {IMPORTS_DIR} {PROJ_TEARDOWN}')
+        subprocess.run(f'{COMANDO_BASE} {IMPORTS_DIR} {PROJ_TEARDOWN}')
     except Exception as e:
         print(f'Erro no comando "{execute}", exceção é:{e}')
