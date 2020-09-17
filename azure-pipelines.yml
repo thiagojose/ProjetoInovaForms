@@ -27,7 +27,7 @@ steps:
 #&& npm install chrome -g
   displayName: 'Install dependencies'
 
-- powershell: python libraries\RunRobot.py headlesschrome
+- powershell: python libraries\RunRobot.py chrome
   displayName: 'Run Robot Scripts'
 
 #- task: PublishTestResults@2
@@ -66,9 +66,22 @@ steps:
   inputs:
     PathtoPublish: results
     ArtifactName: 'results'
+
 # Download an artifact named 'WebApp' from a specific build run to 'bin' in $(Build.SourcesDirectory)
-- task: DownloadPipelineArtifact@2
+#- task: DownloadPipelineArtifact@2
+#  inputs:
+#    source: 'current'
+#    artifact: 'results'
+#    path: $(Build.SourcesDirectory)/results
+
+#- task: DownloadPipelineArtifact@2
+#  inputs:
+#    source: 'current'
+#    artifact: 'results'
+#    path: $(Build.SourcesDirectory)/results
+
+- task: DownloadBuildArtifacts@0
   inputs:
-    source: 'current'
-    artifact: 'results'
-    path: $(Build.SourcesDirectory)/results
+    buildType: 'current'
+    artifactName: 'results'
+    downloadPath: $(Build.SourcesDirectory)/results
