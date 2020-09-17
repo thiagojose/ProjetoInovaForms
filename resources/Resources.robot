@@ -25,6 +25,7 @@ Então é efetuado o login
 
 Então é encerrada a sessão
     Wait Until Page Contains Element    xpath=${XPATHLOGOUT}
+	Scroll Element Into View    xpath=${XPATHLOGOUT}
     Click Link    xpath=${XPATHLOGOUT}
 
 
@@ -206,7 +207,7 @@ Então será preenchido o formulário de criação de macro ação
 
 
 E ao clicar em adicionar macro ação
-    Click Element    ${XPATHADICIONARMACROACAO}
+    Double Click Element    ${XPATHADICIONARMACROACAO}
 	Wait Until Page Does Not Contain Element    ${XPATHADICIONARMACROACAO}
 	Page Should Contain Element    ${XPATHMACROACAOADICIONADA}
 
