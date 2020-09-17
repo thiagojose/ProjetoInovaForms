@@ -11,7 +11,7 @@ ${OPTIONS}    add_argument("--disable-dev-shm-usage"); add_argument("--headless"
 
 Abrir navegador
     Open Browser    ${URL}   ${BROWSER}    alias=${BROWSER}
-#...                 options=${OPTIONS}
+...                 options=${OPTIONS}
 	Maximize Browser Window
 
 Fechar navegador
@@ -20,7 +20,7 @@ Fechar navegador
 
 Abrir navegador e logar
     Open Browser    ${URL}   ${BROWSER}    alias=${BROWSER}
-#...                 options=${OPTIONS}
+...                 options=${OPTIONS}
 	Maximize Browser Window
 	Então é efetuado o login
 
