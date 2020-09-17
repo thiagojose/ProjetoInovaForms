@@ -1,4 +1,4 @@
-wheel
+#wheel dá um erro dizendo que não tá instalado, mas ao instalar o erro persiste no pipeline, então vou só comentar por enquanto
 robotframework
 robotframework-seleniumlibrary
 robotframework-requests==0.7.0
