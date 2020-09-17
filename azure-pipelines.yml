@@ -52,9 +52,17 @@ steps:
 #    patterns: '**/results/*'
 #    path: '$(Build.ArtifactStagingDirectory)'
 
-- task: PublishTestResults@2
+# isso supostamente funciona, só que não tem item de teste para ver o teste no menu ali <-
+#- task: PublishTestResults@2
+#  inputs:
+#    testResultsFiles: output.xml
+#    searchFolder: 'D:\a\1\s\results'
+#  condition: succeededOrFailed()
+#  displayName: 'Publish Test Results output.xml'
+
+# Download an artifact named 'WebApp' from a specific build run to 'bin' in $(Build.SourcesDirectory)
+- task: DownloadPipelineArtifact@2
   inputs:
-    testResultsFiles: output.xml
-    searchFolder: 'D:\a\1\s\results'
-  condition: succeededOrFailed()
-  displayName: 'Publish Test Results output.xml'
+    source: 'current'
+    artifact: 'results'
+    path: $(Build.SourcesDirectory)/results
