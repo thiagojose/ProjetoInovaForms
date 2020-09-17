@@ -40,21 +40,21 @@ steps:
 #- download: current
 #  artifact: results
 
+#- task: PublishBuildArtifacts@1
+#  displayName: 'Publish Package'
+#  inputs:
+#    ArtifactName: 'results'
+
 #- download: none
 #- task: DownloadPipelineArtifact@2
 #  displayName: 'Download Build Artifacts'
 #  inputs:
-#    patterns: results
+#    patterns: '**/results/*'
 #    path: '$(Build.ArtifactStagingDirectory)'
 
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Package'
+- task: PublishTestResults@2
   inputs:
-    ArtifactName: 'results'
-
-- download: none
-- task: DownloadPipelineArtifact@2
-  displayName: 'Download Build Artifacts'
-  inputs:
-    patterns: '**/results/*'
-    path: '$(Build.ArtifactStagingDirectory)'
+    testResultsFiles: output.xml
+    searchFolder: 'D:\a\1\s\results'
+  condition: succeededOrFailed()
+  displayName: 'Publish Test Results output.xml'
