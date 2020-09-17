@@ -60,6 +60,11 @@ steps:
 #  condition: succeededOrFailed()
 #  displayName: 'Publish Test Results output.xml'
 
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Package'
+  inputs:
+    ArtifactName: 'results'
 # Download an artifact named 'WebApp' from a specific build run to 'bin' in $(Build.SourcesDirectory)
 - task: DownloadPipelineArtifact@2
   inputs:
