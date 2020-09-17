@@ -11,8 +11,10 @@ ${OPTIONS}    add_argument("--disable-dev-shm-usage"); add_argument("--headless"
 
 Abrir navegador
     Open Browser    ${URL}   ${BROWSER}    alias=${BROWSER}
-...                 options=${OPTIONS}
-	Maximize Browser Window
+#...                 options=${OPTIONS}
+    Set Window Size    width=1440    height=900
+#   dá erro maximizar a window no headless pois o tamanho padrão passa a ser 800x600
+#	Maximize Browser Window
 
 Fechar navegador
     Run Keyword If Test Failed    Screenshot Personalizada
@@ -20,8 +22,10 @@ Fechar navegador
 
 Abrir navegador e logar
     Open Browser    ${URL}   ${BROWSER}    alias=${BROWSER}
-...                 options=${OPTIONS}
-	Maximize Browser Window
+#...                 options=${OPTIONS}
+    Set Window Size    width=1440    height=900
+#   dá erro maximizar a window no headless pois o tamanho padrão passa a ser 800x600
+#	Maximize Browser Window
 	Então é efetuado o login
 
 Deslogar e fechar o navegador
