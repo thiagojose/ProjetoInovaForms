@@ -35,7 +35,7 @@ steps:
     testResultsFiles: '*'
     searchFolder: results
   condition: succeededOrFailed()
-  displayName: 'Publish Test Results log.html'
+  displayName: 'Publish Test Results '
 
 #- download: current
 #  artifact: results
