@@ -10,3 +10,4 @@ robotframework-requests==0.7.0
 #RUN dnf install -y chromedriver-stable >/dev/null && echo OK
 #RUN dnf install -y https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm >/dev/null && echo OK
 #ou verificar como instalar o chocolatey auto pra construir o sistema automatico
+# acima não é necessário, mas vou deixar pra me lembrar de algumas coisas
