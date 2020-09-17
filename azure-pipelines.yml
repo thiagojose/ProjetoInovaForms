@@ -64,7 +64,7 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Package'
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/results'
     ArtifactName: 'results'
 # Download an artifact named 'WebApp' from a specific build run to 'bin' in $(Build.SourcesDirectory)
 - task: DownloadPipelineArtifact@2
