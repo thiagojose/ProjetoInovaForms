@@ -23,7 +23,8 @@ steps:
 
 - script: |
     python -m pip install --upgrade pip
-    pip install -r requirements.txt && npm install chrome -g && npm install chromedriver
+    pip install -r requirements.txt && npm install chromedriver
+#&& npm install chrome -g
   displayName: 'Install dependencies'
 
 - powershell: python libraries\RunRobot.py headlesschrome
@@ -37,4 +38,4 @@ steps:
 #  displayName: 'Publish Test Results log.html'
 
 - download: current
-  artifact: D:\a\1\s\results\
+  artifact: 'D:/a/1/s/results/'
