@@ -37,8 +37,8 @@ steps:
 #  condition: succeededOrFailed()
 #  displayName: 'Publish Test Results log.html'
 
-#- download: current
-#  artifact: results
+- download: current
+  artifact: results
 
 - task: DownloadBuildArtifacts@0
   inputs:
