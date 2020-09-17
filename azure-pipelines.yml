@@ -38,4 +38,4 @@ steps:
 #  displayName: 'Publish Test Results log.html'
 
 - download: current
-  artifact: D:\a\1\s\results
+  artifact: results
